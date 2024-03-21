@@ -120,24 +120,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   color: #000000; }
-  .form-control:active, .form-control:focus, .custom-select:active, .custom-select:focus {
-    color: #000000;
-    border-color: #136ad5;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background: transparent; }
-  .form-control::-webkit-input-placeholder, .custom-select::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(0, 0, 0, 0.5); }
-  .form-control::-moz-placeholder, .custom-select::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(0, 0, 0, 0.5); }
-  .form-control:-ms-input-placeholder, .custom-select:-ms-input-placeholder {
-    /* IE 10+ */
-    color: rgba(0, 0, 0, 0.5); }
-  .form-control:-moz-placeholder, .custom-select:-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(0, 0, 0, 0.5); }
 
 .gutter-v1 {
   margin-right: -20px;

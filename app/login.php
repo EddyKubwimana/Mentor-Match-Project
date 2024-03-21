@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <title>Learner Free Bootstrap Template by Untree.co</title>
+  <title>Login</title>
 </head>
 
 <body>
@@ -46,12 +46,12 @@
 
           <div class="col-6 col-lg-9">
             <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
+            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">+233 599 346 549</span></a> 
+            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">eddy.kubwimana@ashesi.edu.gh</span></a> 
           </div>
 
           <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
+            <a href="login.php" class="small mr-3">
               <span class="icon-lock"></span>
               Log In
             </a>
@@ -67,12 +67,12 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
+          <a href="index.html" class="logo menu-absolute m-0">Get your mentor or Mentees Easily<span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
+            <li class="active"><a href="contact.php">Contact</a></li>
           </ul>
 
           <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
