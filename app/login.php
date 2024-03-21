@@ -117,6 +117,12 @@
                 <input type="text" class="form-control" placeholder="Email">
               </div>
               <div class="col-12 mb-3">
+                <input type="text" class="form-control" placeholder="Firstname">
+              </div>
+              <div class="col-12 mb-3">
+                <input type="text" class="form-control" placeholder="Lastname">
+              </div>
+              <div class="col-12 mb-3">
                 <input type="password" class="form-control" placeholder="Password">
               </div>
 
