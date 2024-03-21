@@ -1,3 +1,7 @@
+<?php
+include('config.php')?
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,6 +182,12 @@ header {
                 </div>
             </div>
         </div>
+    </section>
+
+    <section>
+
+        <
+        
     </section>
 
     <footer>
