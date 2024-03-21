@@ -198,12 +198,12 @@ header {
     $result = $conn->query($query);
     while($row = $result->fetch_assoc()){
 
-        <td>{$row['user_id']}</td>
+        echo "<td>{$row['user_id']}</td>
         <td>{$row['first_name']}</td>
-        <td>{$row['last_name']}</td>
+        <td>{$row['last_name']}</td>";
     }
 
-    $conn->close()
+    $conn->close();
 
     ?>
     
