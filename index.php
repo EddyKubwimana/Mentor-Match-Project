@@ -186,7 +186,28 @@ header {
 
     <section>
 
-        <
+    <table>
+
+     <tr>
+         <td>User ID</td>
+         <td> First Name</td>
+         <td> Last Name</td>  
+     </tr>
+    <?php
+    
+    $query = "SELECT * FROM Users";
+    $result = $conn->query($query);
+    while($row = $result->fetch_assoc()){
+
+        <td>{$row['user_id']}</td>
+        <td>{$row['first_name']}</td>
+        <td>{$row['last_name']}</td>
+    }
+
+    $conn->close()
+
+    ?>
+     </table>
         
     </section>
 
