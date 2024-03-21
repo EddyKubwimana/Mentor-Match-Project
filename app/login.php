@@ -1,9 +1,4 @@
-<!-- /*
-* Template Name: Learner
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,8 +12,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
@@ -62,7 +55,7 @@
               <span class="icon-lock"></span>
               Log In
             </a>
-            <a href="register.html" class="small">
+            <a href="register.php" class="small">
               <span class="icon-person"></span>
               Register
             </a>
@@ -78,29 +71,11 @@
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li><a href="index.html">Home</a></li>
-            <li class="has-children">
-              <a href="#">Dropdown</a>
-              <ul class="dropdown">
-                <li><a href="elements.html">Elements</a></li>
-                <li class="has-children">
-                  <a href="#">Menu Two</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Sub Menu One</a></li>
-                    <li><a href="#">Sub Menu Two</a></li>
-                    <li><a href="#">Sub Menu Three</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Menu Three</a></li>
-              </ul>
-            </li>
-            <li><a href="staff.html">Our Staff</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="about.html">About</a></li>
             <li class="active"><a href="contact.html">Contact</a></li>
           </ul>
 
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
+          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
 
           <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
@@ -189,19 +164,7 @@
           </div> <!-- /.widget -->
         </div> <!-- /.col-lg-3 -->
 
-        <div class="col-lg-2 ml-auto">
-          <div class="widget">
-            <h3>Projects</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-              <li><a href="#">jQuery</a></li>
-              <li><a href="#">Bootstrap</a></li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
+        
         <div class="col-lg-3">
           <div class="widget">
             <h3>Gallery</h3>
