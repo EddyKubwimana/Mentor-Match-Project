@@ -1,6 +1,5 @@
 <?php
-include 'config.php'
-
+include ("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -193,20 +192,7 @@ header {
          <td> First Name</td>
          <td> Last Name</td>  
      </tr>
-    <?php
     
-    $query = "SELECT * FROM Users";
-    $result = $conn->query($query);
-    while($row = $result->fetch_assoc()){
-
-        <td>{$row['user_id']}</td>
-        <td>{$row['first_name']}</td>
-        <td>{$row['last_name']}</td>
-    }
-
-    $conn->close()
-
-    ?>
      </table>
         
     </section>
