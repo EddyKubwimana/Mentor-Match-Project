@@ -43,7 +43,7 @@
             var xhr = new XMLHttpRequest();
 
             // Configure the request
-            xhr.open('GET', 'http://localhost/photoapp/api.php?user='+userId, true);
+            xhr.open('GET', 'https://photohub-be8962501b72.herokuapp.com/api.php/photoapp/api.php?user='+userId, true);
 
             // Define the callback function to handle the response
             xhr.onload = function() {
