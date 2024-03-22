@@ -1,19 +1,17 @@
-/*
-* Template Name: Learner
-* Template Author: Untree.co
-* Template License: https://creativecommons.org/licenses/by/3.0/
-* Author URI: https://untree.co/
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-* Twitter: https://twitter.com/Untree_co
-* Facebook: https://web.facebook.com/Untree.co/
-* Pinterest: https://pinterest.com/Untree_co/
-*/
+*
+{
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  padding: 0;
+  ;
+}
 body {
-  font-family: "Inter", sans-serif;
   line-height: 1.6;
   background-color: #ffffff;
   overflow-x: hidden;
-  font-size: 16px;
+  font-size: 20px;
   color: #666; }
   body:before {
     content: "";

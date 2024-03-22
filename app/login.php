@@ -10,7 +10,7 @@
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -67,7 +67,7 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">Get your mentor or Mentees Easily<span class="text-primary">.</span></a>
+          <a href="index.html" class="logo menu-absolute m-0">Get your mentor or Mentee<span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li><a href="index.html">Home</a></li>
@@ -113,14 +113,9 @@
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
           <form action="#" class="form-box">
             <div class="row">
+        
               <div class="col-12 mb-3">
                 <input type="text" class="form-control" placeholder="Email">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Firstname">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Lastname">
               </div>
               <div class="col-12 mb-3">
                 <input type="password" class="form-control" placeholder="Password">
@@ -135,7 +130,7 @@
               </div>
 
               <div class="col-12">
-                <input type="submit" value="Send Message" class="btn btn-primary">
+                <input type="submit" value="Login In" class="btn btn-primary">
               </div>
             </div>
           </form>
