@@ -51,18 +51,18 @@
       <div class="container">
         <div class="row align-items-center">
 
-          <div class="col-6 col-lg-9">
+         <div class="col-6 col-lg-9">
             <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
+            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">+233 599 346 549</span></a> 
+            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">eddy.kubwimana@ashesi.edu.gh</span></a> 
           </div>
 
           <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
+            <a href="login.php" class="small mr-3">
               <span class="icon-lock"></span>
               Log In
             </a>
-            <a href="register.html" class="small">
+            <a href="register.php" class="small">
               <span class="icon-person"></span>
               Register
             </a>
@@ -74,33 +74,17 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
+          <a href="index.html" class="logo menu-absolute m-0">Mentor Match<span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li><a href="index.html">Home</a></li>
-            <li class="has-children">
-              <a href="#">Dropdown</a>
-              <ul class="dropdown">
-                <li><a href="elements.html">Elements</a></li>
-                <li class="has-children">
-                  <a href="#">Menu Two</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Sub Menu One</a></li>
-                    <li><a href="#">Sub Menu Two</a></li>
-                    <li><a href="#">Sub Menu Three</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Menu Three</a></li>
-              </ul>
-            </li>
-            <li><a href="staff.html">Our Staff</a></li>
-            <li><a href="news.html">News</a></li>
-            <li class="active"><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="mentor.php">Mentor Dashboard</a></li>
+            <li><a href="mentor.php">Mentee Dashboard</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
 
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
+          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
 
           <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
@@ -112,13 +96,13 @@
   </nav>
   
 
-  <div class="untree_co-hero overlay" style="background-image: url('images/img-school-4-min.jpg');">
+  <div class="untree_co-hero overlay" style="background-image: url('images/img-school-6-min.jpg');">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Gallery</h1>
+              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">News</h1>
               <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <p>Another free template by <a href="https://untree.co/" target="_blank" class="link-highlight">Untree.co</a>. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.</p>
               </div>
@@ -140,68 +124,95 @@
 
 
 
-  <div class="untree_co-section">
+  <div class="untree_co-section bg-light">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 item">
-          <a href="images/img-school-5-min.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img-school-5-min.jpg">
-          </a>
-          <a href="images/img_1.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_1.jpg">
-          </a>
-          <a href="images/img_2.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="100">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_2.jpg">
-          </a>
-          <a href="images/img_3.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="200">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_3.jpg">
-          </a>
-
+      <div class="row align-items-stretch">
+        <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
+          <div class="media-h d-flex h-100">
+            <figure>
+              <img src="images/img-school-4-min.jpg" alt="Image">
+            </figure>
+            <div class="media-h-body">
+              <h2 class="mb-3"><a href="#">Education for Tomorrow's Leaders</a></h2>
+              <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-4 item">
-          <a href="images/img-school-1-min.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img-school-1-min.jpg">
-          </a>
-          <a href="images/img_1.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_4.jpg">
-          </a>
-          <a href="images/img_5.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="100">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_5.jpg">
-          </a>
-          <a href="images/img_8.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="200">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_8.jpg">
-          </a>
+        <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
+          <div class="media-h d-flex h-100">
+            <figure>
+              <img src="images/img-school-3-min.jpg" alt="Image">
+            </figure>
+            <div class="media-h-body">
+              <h2 class="mb-3"><a href="#">Enroll Your Kids This Summer to get 30% off</a></h2>
+              <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-4 item">
-          <a href="images/img-school-2-min.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img-school-2-min.jpg">
-          </a>
-          <a href="images/img_9.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_9.jpg">
-          </a>
-          <a href="images/img_6.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="100">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_6.jpg">
-          </a>
-          <a href="images/img_7.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="200">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_7.jpg">
-          </a>
-          <a href="images/img_10.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
-            <span class="icon-search2"></span>
-            <img class="img-fluid" src="images/img_10.jpg">
-          </a>
 
+        <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
+          <div class="media-h d-flex h-100">
+            <figure>
+              <img src="images/img-school-2-min.jpg" alt="Image">
+            </figure>
+            <div class="media-h-body">
+              <h2 class="mb-3"><a href="#">Education for Tomorrow's Leaders</a></h2>
+              <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
+          <div class="media-h d-flex h-100">
+            <figure>
+              <img src="images/img-school-1-min.jpg" alt="Image">
+            </figure>
+            <div class="media-h-body">
+              <h2 class="mb-3"><a href="#">Enroll Your Kids This Summer to get 30% off</a></h2>
+              <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
+          <div class="media-h d-flex h-100">
+            <figure>
+              <img src="images/img-school-5-min.jpg" alt="Image">
+            </figure>
+            <div class="media-h-body">
+              <h2 class="mb-3"><a href="#">Education for Tomorrow's Leaders</a></h2>
+              <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
+          <div class="media-h d-flex h-100">
+            <figure>
+              <img src="images/img-school-6-min.jpg" alt="Image">
+            </figure>
+            <div class="media-h-body">
+              <h2 class="mb-3"><a href="#">Enroll Your Kids This Summer to get 30% off</a></h2>
+              <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <ul class="list-unstyled custom-pagination">
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -281,7 +292,7 @@
 
       <div class="row mt-5">
         <div class="col-12 text-center">
-          <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a>  <!-- License information: https://untree.co/license/ -->
+          <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
           </div>
         </div>
       </div> <!-- /.container -->

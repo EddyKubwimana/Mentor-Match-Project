@@ -44,7 +44,7 @@
       <div class="container">
         <div class="row align-items-center">
 
-          <div class="col-6 col-lg-9">
+         <div class="col-6 col-lg-9">
             <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
             <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">+233 599 346 549</span></a> 
             <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">eddy.kubwimana@ashesi.edu.gh</span></a> 
@@ -67,12 +67,14 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">Get your mentor or Mentee<span class="text-primary">.</span></a>
+          <a href="index.html" class="logo menu-absolute m-0">Mentor Match<span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="active"><a href="contact.php">Contact</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="mentor.php">Mentor Dashboard</a></li>
+            <li><a href="mentor.php">Mentee Dashboard</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
 
           <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
@@ -110,34 +112,27 @@
     <div class="container">
 
       <div class="row mb-5 justify-content-center">
-        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="#" class="form-box">
-            <div class="row">
-        
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Email">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
 
-              <div class="col-12 mb-3">
-                <label class="control control--checkbox">
-                  <span class="caption">Remember me</span>
-                  <input type="checkbox" checked="checked" />
-                  <div class="control__indicator"></div>
-                </label>
-              </div>
-
-              <div class="col-12">
-                <input type="submit" value="Login In" class="btn btn-primary">
-              </div>
-            </div>
-          </form>
+      <div class="login-container">
+    <h2>Login</h2>
+    <form class="login-form" action="#" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up</a>
         </div>
-      </div>
+    </form>
+</div>
 
       
+       
+      
+
+
+
+
+    </div></div>
     </div>
   </div> <!-- /.untree_co-section -->
 
@@ -150,7 +145,7 @@
         <div class="col-lg-3 mr-auto">
           <div class="widget">
             <h3>About Us<span class="text-primary">.</span> </h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>We all need coach. Learning is a tough and tiring job. Mentor Match is here to make the journey of learning a collective one</p>
           </div> <!-- /.widget -->
           <div class="widget">
             <h3>Connect</h3>
@@ -165,36 +160,15 @@
           </div> <!-- /.widget -->
         </div> <!-- /.col-lg-3 -->
 
-        
-        <div class="col-lg-3">
-          <div class="widget">
-            <h3>Gallery</h3>
-            <ul class="instafeed instagram-gallery list-unstyled">
-              <li><a class="instagram-item" href="images/gal_1.jpg" data-fancybox="gal"><img src="images/gal_1.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_2.jpg" data-fancybox="gal"><img src="images/gal_2.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_3.jpg" data-fancybox="gal"><img src="images/gal_3.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_4.jpg" data-fancybox="gal"><img src="images/gal_4.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_5.jpg" data-fancybox="gal"><img src="images/gal_5.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="images/gal_6.jpg" alt="" width="72" height="72"></a>
-              </li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
+      
 
         <div class="col-lg-3">
           <div class="widget">
             <h3>Contact</h3>
-            <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+            <address>University Avenue, Ashesi University</address>
             <ul class="list-unstyled links mb-4">
-              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-              <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+              <li><a href="tel://233599346549">+233 599 346 549</a></li>
+              <li><a href="mailto:info@mydomain.com">eddy.kubwimana@ashesi.edu.gh</a></li>
             </ul>
           </div> <!-- /.widget -->
         </div> <!-- /.col-lg-3 -->
@@ -203,8 +177,7 @@
 
       <div class="row mt-5">
         <div class="col-12 text-center">
-          <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
-          </div>
+          <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
         </div>
       </div> <!-- /.container -->
     </div> <!-- /.site-footer -->
