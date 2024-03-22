@@ -37,7 +37,7 @@
             var xhr = new XMLHttpRequest();
 
             // Configure the request
-            xhr.open('GET', 'http://localhost:8888/Mentor-Match-Project/api/accessdata.php?user=' + userId, true);
+            xhr.open('GET', 'https://mentormatch-d34df610255f.herokuapp.com/api/accessdata.php?user=' + userId, true);
 
             // Define the callback function to handle the response
             xhr.onload = function() {
