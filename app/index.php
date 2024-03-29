@@ -68,8 +68,7 @@
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="mentor.php">Mentor Dashboard</a></li>
-            <li><a href="mentor.php">Mentee Dashboard</a></li>
+            <li><a href="dashboard.php">Mentor Dashboard</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>
@@ -97,8 +96,6 @@
           <div class="row justify-content-center ">
 
             <div class="col-lg-6 text-center ">
-              <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up" data-aos-delay="0" class="caption mb-4 d-inline-block">Watch the video</a>
-
               <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Education is the Mother of Leadership</h1>
               <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore More</a></p>
 
@@ -153,7 +150,7 @@
             </div>
             <div>
               <h3>Computer Engineering</h3>
-              <span>7,291 Mentor</span>
+              <span>11 Mentor</span>
             </div>
           </a>
         </div>
@@ -166,7 +163,7 @@
             </div>
             <div>
               <h3>Electric and Electronic Engineering</h3>
-              <span>9,114 Mentors</span>
+              <span>14 Mentors</span>
             </div>
           </a>
         </div>
@@ -177,7 +174,7 @@
             </div>
             <div>
               <h3>Mechatronics</h3>
-              <span>2,391 Mentor</span>
+              <span>7 Mentor</span>
             </div>
           </a>
         </div>
@@ -188,7 +185,7 @@
             </div>
             <div>
               <h3>Economics</h3>
-              <span>7,991 Mentors</span>
+              <span>51 Mentors</span>
             </div>
           </a>
         </div>
@@ -196,64 +193,17 @@
     </div>
   </div>
 
-  <div class="services-section">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-4 mb-5 mb-lg-0">
-
-          <div class="section-title mb-3" data-aos="fade-up" data-aos-delay="0">
-            <h2 class="line-bottom mb-4">Become an Mentor</h2>
-          </div>
-
-          <p data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live.</p>
-
-          <ul class="ul-check list-unstyled mb-5 primary" data-aos="fade-up" data-aos-delay="200">
-            <li>Behind the word Mountains.</li>
-            <li>Far far away Mountains.</li>
-            <li>Large language Ocean.</li>
-          </ul>
-
-          <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Get Started</a></p>
-
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
-          <figure class="img-wrap-2">
-            <img src="images/teacher-min.jpg" alt="Image" class="img-fluid">
-            <div class="dotted"></div>
-          </figure>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="untree_co-section pt-0 bg-img overlay" style="background-image: url('images/img-school-1-min.jpg');">
-    <div class="container">
-      <div class="row align-items-center justify-content-center text-center">
-        <div class="col-lg-7">
-          <h2 class="text-white mb-3" data-aos="fade-up" data-aos-delay="0">Education for Tomorrow's Leaders</h2>
-          <p class="text-white h5 mb-4" data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          <p><a href="#" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="200">Enroll Now</a></p>
-        </div>
-      </div>
-    </div>  
-  </div> <!-- /.untree_co-section -->
 
   <div class="untree_co-section">
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-lg-5 mb-5">
-          <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
-          <p data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
-            <li>Separated they live</li>
-            <li>Bookmarksgrove right at the coast</li>
-            <li>large language ocean</li>
-          </ul>
+          <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">Our community is growing</h2>
+        
 
           <div class="row count-numbers mb-5">
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-              <span class="counter d-block"><span data-number="12023">0</span><span>+</span></span>
+              <span class="counter d-block"><span data-number="145s">0</span><span>+</span></span>
               <span class="caption-2">No. Mentors</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -287,7 +237,7 @@
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
           <h2 class="line-bottom text-center mb-4">Mentor-Match News</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+
         </div>
       </div>
       <div class="row align-items-stretch">
@@ -298,8 +248,8 @@
             </figure>
             <div class="media-h-body">
               <h2 class="mb-3"><a href="#">Mentoring for Tomorrow's Leaders</a></h2>
-              <div class="meta mb-2"><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Admin</div>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <div class="meta mb-2"><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Eddy Kubwimana</div>
+              <p>Mentoring stands as a cornerstone in the edifice of leadership development, paving the path for tomorrow's leaders to flourish. In the realm of problem-solving, mentorship serves as a guiding light, illuminating the avenues of strategic thinking and fostering resilience in the face of adversity.</p>
               <p><a href="#">Learn More</a></p>
             </div>
           </div>
@@ -310,9 +260,9 @@
               <img src="images/img-school-2-min.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
-              <h2 class="mb-3"><a href="#">Enroll Your Kids This Summer to get 30% off</a></h2>
+              <h2 class="mb-3"><a href="#">Teaching is learning</a></h2>
               <div class="meta mb-2"><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Admin</div>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>"Teaching is learning" encapsulates the profound symbiosis between educators and students, where the act of imparting knowledge intertwines with the journey of acquiring wisdom. At its core, teaching transcends the mere transmission of..</p>
               <p><a href="#">Learn More</a></p>
             </div>
           </div>
@@ -333,23 +283,20 @@
         </div>
         <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
           <h3 class="line-bottom mb-4">Why Choose Us</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+          <p>Attracting minds that hunger for knowledge, nurturing hearts that thrive on learning. Choose us, and let's journey towards success together. </p>
 
           <div class="custom-accordion" id="accordion_1">
             <div class="accordion-item">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Good Teachers and Staffs</button>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Good Mentors and Supportive Community</button>
               </h2>
 
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
                 <div class="accordion-body">
                   <div class="d-flex">
-                    <div class="accordion-img mr-4">
-                      <img src="images/img-school-1-min.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  <div>
+                      <p>Our community is dedicated to ensure that everybody learns at their own pace why building connection </p>
+                      <p>Like minded mentors and mentees who are committed to do exceptional through knowledge sharing</p>
                     </div>
                   </div>
                 </div>
@@ -358,17 +305,14 @@
 
             <div class="accordion-item">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We Value Good Characters</button>
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We Value Diversity</button>
               </h2>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
                 <div class="accordion-body">
                   <div class="d-flex">
-                    <div class="accordion-img mr-4">
-                      <img src="images/img-school-2-min.jpg" alt="Image" class="img-fluid">
-                    </div>
                     <div>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                      <p>Mentors and mentees are from different countries and background which makes the learning experience full and diverse</p>
+                      <p>Every community members is committed to ensuring that the overall experience of our members is positive</p>
                     </div>
                   </div>
                 </div>
@@ -376,32 +320,29 @@
             </div> <!-- .accordion-item -->
             <div class="accordion-item">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Your Children are Safe</button>
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Your Learning</button>
               </h2>
 
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
                 <div class="accordion-body">
                   <div class="d-flex">
-                    <div class="accordion-img mr-4">
-                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-                    </div>
                     <div>
-                      <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                      <p>Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                      <p>Connections</p>
+                      <p>Books and soft copy sharing without challenges</p>
                     </div>
                   </div>
 
                 </div>
               </div>
 
-            </div> <!-- .accordion-item -->
+            </div> 
 
           </div>
 
         </div>
       </div>
     </div>
-  </div> <!-- /.untree_co-section -->
+  </div> 
 
   <div class="site-footer">
 

@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 150px;
+    background-color: #136ad5;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.mentoring-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.current-mentor, .current-mentee, .available-mentors, .available-mentees {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.chat-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.chat {
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.message-content {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.received {
+    background-color: #e5e5ea;
+    align-self: flex-start;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #888;
+}
+
+.username {
+    font-size: 12px;
+    color: #136ad5;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+}
+
+.input-box textarea {
+    flex: 1;
+    resize: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-box button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 5px;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

@@ -83,7 +83,7 @@
     <p>Enter your Business ID to access farm produce. Nicole has set your ID to <span style="background-color: yellow;">1</span>.</p>
     <label for="userIdInput">Enter your Business ID:</label>
     <input type="text" id="userIdInput">
-    <button onclick="getData()">Get Data</button>
+    <button onclick="testing()">Get Data</button>
     <div id="dataContainer"></div>
 
     <script>
@@ -142,6 +142,39 @@
         function displayError() {
             var html = '<div class="error-message">Check with the farm, your ID is not valid. Thank you!</div>';
             document.getElementById('dataContainer').innerHTML = html;
+        }
+
+
+        function testing(){
+            var userId = document.getElementById('userIdInput').value;
+            xhr = new XMLHttpRequest()
+            xhr.open('GET',"'https://photohub-be8962501b72.herokuapp.com/api.php/photoapp/api.php?user=' + userId", true)
+
+            xhr.onload = function(){
+
+                if(xhr.status>=200 && xhr.status <300){
+
+                   var data = JSON.parse(xhr.responseText)
+
+                   if(data.error){
+
+
+                    document.getElementById('dataContainer').innerHTML = '<div class="error-message">' + data.error + '</div>'
+
+
+                   }
+                   else{
+
+                    displayData(data)
+                   }
+
+
+
+                }else{
+
+                    displayError()
+                }
+            }
         }
     </script>
 </body>
