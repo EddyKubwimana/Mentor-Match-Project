@@ -65,7 +65,7 @@
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="admin/dashboard.php">Dashboard</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>

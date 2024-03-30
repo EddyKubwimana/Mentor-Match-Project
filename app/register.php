@@ -1,9 +1,6 @@
-<!-- /*
-* Template Name: Learner
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+<?php
+include("../setting/core.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,6 +20,62 @@
 
   <title>Register</title>
 </head>
+<style>
+
+
+.registrationcontainer {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="password"],
+input[type="submit"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+</style>
 
 <body>
 
@@ -34,6 +87,7 @@
     </div>
     <div class="site-mobile-menu-body"></div>
   </div>
+
 
 
   
@@ -69,8 +123,7 @@
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="mentor.php">Mentor Dashboard</a></li>
-            <li><a href="mentor.php">Mentee Dashboard</a></li>
+          
             <li><a href="about.php">About</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>
@@ -98,40 +151,43 @@
             </div>
           </div>
         </div>
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
+      </div> 
+    </div> 
 
-  </div> <!-- /.untree_co-hero -->
+  </div> 
+
+    <div class="registrationcontainer">
+  
+          <form  class="registerForm" id = "registrationForm" action="../app/action/register_action.php" method="post">
+    
+               <input id="firstName" type="text" name="firstname" pattern="[a-zA-Z]+" title="Your name should not have number " placeholder="First name" required>
 
 
-
-
-  <div class="untree_co-section">
-    <div class="container">
-
-      <div class="row mb-5 justify-content-center">
-
-      <div class="login-container">
-    <h2>Register</h2>
-    <form class="login-form" action="#" method="post">
-        <input type="text" name="firstname" placeholder="First name" required>
-        <input type="text" name="lastname" placeholder="Last Name" required>
-        <input type="text" name="email" placeholder="Last Name" required>
-        <input type="text" name="phone" placeholder="Last Name" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Login">
-        <div class="signup-link">
-            Do you have account? <a href="#">Login In</a>
-        </div>
-    </form>
-</div>
+              <input id = "lastName"  type="text" name="lastname"  pattern="[a-zA-Z]+" title="Your name should not have number "  placeholder="Last Name" required>
+              <input id = "email" type="text" name="email" placeholder="Email" required>
+              <input   type="text" name="major" placeholder="Major" required>
+              <input type="date" id="dob" name="dob" placeholder="Date Of Birth" onchange="validateAge()" required>
+      
+              <select id="nationality" name="nationality" required>
+                  <option value="" disabled selected>Select your nationality</option>
+              </select>
+              <input id = "password"type="password" name="password" placeholder="Password" required>
+              <input id = "confirmpassword" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+              <input type="submit" value="Register">
+              <div class="signup-link">
+                  Do you have account? <a href="login.php">Log In</a>
+              </div>
+              <div id ="message">
+            
+              </div>   
+              
+          </form>
+    </div>
        
-        </div>
-      </div>
+       
 
       
-    </div>
-  </div> <!-- /.untree_co-section -->
+    
 
   <div class="site-footer">
 
@@ -143,7 +199,7 @@
           <div class="widget">
             <h3>About Us<span class="text-primary">.</span> </h3>
             <p>We all need coach. Learning is a tough and tiring job. Mentor Match is here to make the journey of learning a collective one</p>
-          </div> <!-- /.widget -->
+          </div> 
           <div class="widget">
             <h3>Connect</h3>
             <ul class="list-unstyled social">
@@ -154,8 +210,8 @@
               <li><a href="#"><span class="icon-pinterest"></span></a></li>
               <li><a href="#"><span class="icon-dribbble"></span></a></li>
             </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
+          </div> 
+        </div> 
 
       
 
@@ -167,17 +223,17 @@
               <li><a href="tel://233599346549">+233 599 346 549</a></li>
               <li><a href="mailto:info@mydomain.com">eddy.kubwimana@ashesi.edu.gh</a></li>
             </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
+          </div> 
+        </div> 
 
-      </div> <!-- /.row -->
+      </div> 
 
       <div class="row mt-5">
         <div class="col-12 text-center">
           <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
         </div>
-      </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+      </div> 
+    </div> 
 
 
     <div id="overlayer"></div>
@@ -199,5 +255,125 @@
     <script src="js/custom.js"></script>
 
   </body>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+       
+        fetch("https://restcountries.com/v3.1/all")
+        .then(response => response.json())
+        .then(data => {
+            const nationalitySelect = document.getElementById("nationality");
+            data.forEach(country => {
+                const option = document.createElement("option");
+                option.value = country.name.common;
+                option.textContent = country.name.common;
+                nationalitySelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching countries:", error);
+        });
+
+      
+        const registrationForm = document.getElementById("registrationForm");
+        registrationForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+           
+            const formData = new FormData(this);
+            for (const entry of formData.entries()) {
+                console.log(entry[0] + ": " + entry[1]);
+            }
+        });
+    });
+
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var formData = new FormData(this);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", this.action, true);
+    xhr.setRequestHeader("Accept", "application/json");
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              
+                document.getElementById("registrationForm").reset(); 
+            } else if(xhr.status == 402) {
+
+              var message = document.getElementById("message");
+
+              message.innerHTML = "<p> Your Email has an account already !</p>" ;
+              message.style.color= "red";
+
+               
+            }
+
+            else{
+
+
+              var message = document.getElementById("message");
+
+              message.innerHTML = "<p> An erroc occured, try again !</p>" ;
+              message.style.color= "red";
+
+               
+
+            }
+            
+        }
+    };
+
+    xhr.send(formData);
+});
+function isValidName(name) {
+    const nameRegex = /^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/;
+    return nameRegex.test(name);
+}
+function isValidName(name) {
+    const nameRegex = /^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/;
+    return nameRegex.test(name);
+}
+
+function isValidAge(dateOfBirth) {
+   
+    const dob = new Date(dateOfBirth);
+    const currentDate = new Date();
+    const ageDifferenceMs = currentDate - dob;
+
+    const age = Math.floor(ageDifferenceMs / (1000 * 60 * 60 * 24 * 365.25));
+  
+    return age >= 15;
+}
+
+
+function isValidAshesiEmail(email) {
+    const regex = /^[a-zA-Z]+\.[a-zA-Z]+@ashesi\.edu\.gh$/;
+    return regex.test(email);
+}
+
+
+function validateAge() {
+        var dobInput = document.getElementById('dob');
+        var dobValue = new Date(dobInput.value);
+        var now = new Date();
+        var age = now.getFullYear() - dobValue.getFullYear();
+        
+        if (now.getMonth() < dobValue.getMonth() || (now.getMonth() === dobValue.getMonth() && now.getDate() < dobValue.getDate())) {
+            age--;
+        }
+
+        if (age < 15) {
+            dobInput.setCustomValidity('You must be 15 or older to join.');
+        } else {
+            dobInput.setCustomValidity('');
+        }
+    }
+
+
+
+
+</script>
 
   </html>

@@ -68,12 +68,12 @@
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="dashboard.php">Mentor Dashboard</a></li>
+            <li><a href="admin/dashboard.php">Dashboard</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>
 
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
+          <a href="register.php" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
 
           <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
@@ -106,10 +106,10 @@
 
         </div>
 
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
+      </div> 
+    </div> 
 
-  </div> <!-- /.untree_co-hero -->
+  </div> 
 
 
   <div class="untree_co-section">
@@ -230,7 +230,7 @@
         </div>
       </div>
     </div>
-  </div> <!-- /.untree_co-section -->
+  </div> 
 
   <div class="untree_co-section bg-light">
     <div class="container">
@@ -269,7 +269,7 @@
         </div>
       </div>
     </div>
-  </div> <!-- /.untree_co-section -->
+  </div> 
 
 
 
@@ -301,7 +301,7 @@
                   </div>
                 </div>
               </div>
-            </div> <!-- .accordion-item -->
+            </div> 
 
             <div class="accordion-item">
               <h2 class="mb-0">
@@ -317,7 +317,7 @@
                   </div>
                 </div>
               </div>
-            </div> <!-- .accordion-item -->
+            </div> 
             <div class="accordion-item">
               <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Your Learning</button>
@@ -354,7 +354,7 @@
           <div class="widget">
             <h3>About Us<span class="text-primary">.</span> </h3>
             <p>We all need coach. Learning is a tough and tiring job. Mentor Match is here to make the journey of learning a collective one</p>
-          </div> <!-- /.widget -->
+          </div> 
           <div class="widget">
             <h3>Connect</h3>
             <ul class="list-unstyled social">
@@ -365,8 +365,8 @@
               <li><a href="#"><span class="icon-pinterest"></span></a></li>
               <li><a href="#"><span class="icon-dribbble"></span></a></li>
             </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
+          </div> 
+        </div> 
 
       
 
@@ -378,17 +378,17 @@
               <li><a href="tel://233599346549">+233 599 346 549</a></li>
               <li><a href="mailto:info@mydomain.com">eddy.kubwimana@ashesi.edu.gh</a></li>
             </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
+          </div> 
+        </div> 
 
-      </div> <!-- /.row -->
+      </div> 
 
       <div class="row mt-5">
         <div class="col-12 text-center">
           <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
         </div>
-      </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+      </div> 
+    </div> 
 
     <div id="overlayer"></div>
     <div class="loader">

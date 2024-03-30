@@ -105,10 +105,10 @@
 
         </div>
 
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
+      </div> 
+    </div> 
 
-  </div> <!-- /.untree_co-hero -->
+  </div> 
 
 
 
@@ -188,7 +188,7 @@
       <div class="widget">
         <h3>About Us<span class="text-primary">.</span> </h3>
         <p>We all need coach. Learning is a tough and tiring job. Mentor Match is here to make the journey of learning a collective one</p>
-      </div> <!-- /.widget -->
+      </div> 
       <div class="widget">
         <h3>Connect</h3>
         <ul class="list-unstyled social">
@@ -199,8 +199,8 @@
           <li><a href="#"><span class="icon-pinterest"></span></a></li>
           <li><a href="#"><span class="icon-dribbble"></span></a></li>
         </ul>
-      </div> <!-- /.widget -->
-    </div> <!-- /.col-lg-3 -->
+      </div> 
+    </div> 
 
   
 
@@ -212,17 +212,17 @@
           <li><a href="tel://233599346549">+233 599 346 549</a></li>
           <li><a href="mailto:info@mydomain.com">eddy.kubwimana@ashesi.edu.gh</a></li>
         </ul>
-      </div> <!-- /.widget -->
-    </div> <!-- /.col-lg-3 -->
+      </div> 
+    </div> 
 
-  </div> <!-- /.row -->
+  </div> 
 
   <div class="row mt-5">
     <div class="col-12 text-center">
       <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
     </div>
-  </div> <!-- /.container -->
-</div> <!-- /.site-footer -->
+  </div> 
+</div> 
 
     <div id="overlayer"></div>
     <div class="loader">

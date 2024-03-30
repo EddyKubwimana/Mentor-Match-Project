@@ -1,3 +1,7 @@
+<?php
+include("../setting/core.php");
+isLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +22,8 @@
             <li><a href="#calendar">Mentor</a></li>
             <li><a href="#me">Meeting</a></li>
             <li><a href="chat.php">Message</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#Logout">Logout</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="../action/logout_action.php">Logout</a></li>
 
         </ul>
     </nav>
@@ -27,57 +31,31 @@
 
 <div class="content">
     <header>
-        <h1>Welcome, [Student Name]!</h1>
+    <h1>Welcome, <?php echo $_SESSION['firstName']?>!</h1>
     </header>
     <main>
 
-    <div class="container">
-    <h1>Mentorship</h1>
-    <div class="current-mentor">
-        <h2>Your existing Mentors</h2>
-        <p class="mentor-name">John Doe</p>
-        <button id="revokeBtn" onclick="revokeMentorship()">Revoke</button>
-    </div>
+                <h1>Find a Mentor</h1>
+                <div id="search">
+                    <label for="course">Course:</label>
+                    <input type="text" id="course" placeholder="Enter course name">
 
-    <div class="current-mentee">
-        <h2>Your existing Mentees</h2>
-        <p class="mentor-name">John Doe</p>
-        <button id="revokeBtn" onclick="revokeMentorship()">Revoke </button>
-    </div>
+                    <label for="major">Major:</label>
+                    <input type="text" id="major" placeholder="Enter major">
 
-    <div class="available-mentors">
-        <h2>Other mentors you can match with</h2>
-        <ul id="mentorsList">
-            <li>Jane Smith <button onclick="requestMentorship('Jane Smith')">Request</button></li>
-            <li>Mike Johnson <button onclick="requestMentorship('Mike Johnson')">Request</button></li>
-        </ul>
-    </div>
+                    <button onclick="searchMentors()">Search Mentors</button>
+                </div>
+
+                <div id="mentorResults">
+                    
+                </div>
 
 
-    <div class="available-mentees">
-        <h2>New mentorship Request</h2>
-        <ul id="mentorsList">
-            <li>Jane Smith <button onclick="requestMentorship('Jane Smith')">Accept</button></li>
-            <li>Mike Johnson <button onclick="requestMentorship('Mike Johnson')">Accept</button></li>
-        </ul>
-    </div>
-</div>
-        
-    </main>
-</div>
+    
 
     </main>
 </div>
 
-<footer>
-    <p>&copy; 2024 School Name. All rights reserved.</p>
-    <nav>
-        <ul>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-        </ul>
-    </nav>
-</footer>
 
 <script src="script.js"></script>
 </body>

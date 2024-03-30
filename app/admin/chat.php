@@ -1,9 +1,13 @@
+<?php
+include("../setting/core.php");
+isLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Chat</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,8 +23,8 @@
             <li><a href="mentor.php">Mentor</a></li>
             <li><a href="#me">Meeting</a></li>
             <li><a href="chat.php">Message</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#Logout">Logout</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="../action/logout_action.php">Logout</a></li>
 
         </ul>
     </nav>
@@ -28,7 +32,7 @@
 
 <div class="content">
     <header>
-        <h1>Welcome, [Student Name]!</h1>
+    <h1>Welcome, <?php echo $_SESSION['firstName']?> !</h1>
     </header>
 
     <main> 
