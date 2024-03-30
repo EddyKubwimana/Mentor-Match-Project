@@ -14,11 +14,9 @@ isLogin();
 <body>
 
 <div class="sidebar">
-    <div class="logo">
-        <img src="school_logo.png" alt="School Logo">
-    </div>
     <nav>
         <ul>
+            <li><a href="../../index.php">Home</a></li>
             <li><a href="#courses">Courses</a></li>
             <li><a href="mentor.php">Mentor</a></li>
             <li><a href="#me">Meeting</a></li>

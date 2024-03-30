@@ -36,8 +36,8 @@ body {
 
 .sidebar nav ul li {
     margin-bottom: 10px;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
 }
 
 .sidebar nav ul li a {
