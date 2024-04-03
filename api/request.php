@@ -3,38 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API TO ACCESS FARM PRODUCE</title>
+    <title>Display Data from API</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f7f7f7;
-            margin: 30px;
-            padding: 20px;
+            color: #333;
         }
 
         h1 {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
             text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         label {
+            font-size: 18px;
+            margin-bottom: 10px;
             display: block;
-            margin-top: 20px;
         }
 
         input[type="text"] {
-            padding: 10px;
-            width: 200px;
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
         }
 
         button {
-            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
+            padding: 12px 20px;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 20px;
         }
 
         button:hover {
@@ -42,87 +58,65 @@
         }
 
         #dataContainer {
-            margin-top: 20px;
+            margin: 0 auto;
+            max-width: 800px;
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
-            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
         }
 
         th, td {
+            border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
         }
 
         th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tr:nth-child(even) {
             background-color: #f2f2f2;
         }
 
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        .error-message {
-            color: #f44336;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #ffebee;
-            border: 1px solid #f44336;
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Access Farm Produce and I am Restaurent </h1>
-    <p>Enter your Business ID to access farm produce. Nicole has set your ID to <span style="background-color: yellow;">1</span>.</p>
+    
+    <h1>API TO REQUEST Nicole's data, Nicole set my business id to 1</h1>
+    <h2>Your Business ID is: <span style="background-color: yellow;">1</span></h2>
     <label for="userIdInput">Enter your Business ID:</label>
     <input type="text" id="userIdInput">
-    <button onclick="testing()">Get Data</button>
+    <button onclick="getData()">Get Data</button>
     <div id="dataContainer"></div>
 
     <script>
         function getData() {
-            // Get user ID entered by the user
             var userId = document.getElementById('userIdInput').value;
-
-            // Create a new XMLHttpRequest object
             var xhr = new XMLHttpRequest();
-
-            // Configure the request
-            xhr.open('GET', 'https://photohub-be8962501b72.herokuapp.com/api.php/photoapp/api.php?user=' + userId, true);
-
-            // Define the callback function to handle the response
+            xhr.open('GET', 'https://photohub-be8962501b72.herokuapp.com/api.php/photoapp/api.php?user='+userId, true);
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
-                    // Parse the JSON response
                     var data = JSON.parse(xhr.responseText);
-
-                    // Handle data received from API
                     if (data.error) {
-                        // Display error message
-                        document.getElementById('dataContainer').innerHTML = '<div class="error-message">' + data.error + '</div>';
+                        displayError(data.error);
                     } else {
-                        // Display data in table
                         displayData(data);
                     }
                 } else {
-                    displayError();
+                    displayError('Error fetching data. Please try again later.');
                 }
             };
-
-            // Send the request
             xhr.send();
         }
 
-        // Function to display data in a table
         function displayData(data) {
-            // Construct HTML for table
             var html = '<table>';
             html += '<tr><th>Product ID</th><th>Product</th><th>Quantity</th><th>Price per Unit</th></tr>';
             data.forEach(item => {
@@ -134,47 +128,11 @@
                         '</tr>';
             });
             html += '</table>';
-
-            // Display table in the container
             document.getElementById('dataContainer').innerHTML = html;
         }
 
-        function displayError() {
-            var html = '<div class="error-message">Check with the farm, your ID is not valid. Thank you!</div>';
-            document.getElementById('dataContainer').innerHTML = html;
-        }
-
-
-        function testing(){
-            var userId = document.getElementById('userIdInput').value;
-            xhr = new XMLHttpRequest()
-            xhr.open('GET',"'https://photohub-be8962501b72.herokuapp.com/api.php/photoapp/api.php?user=' + userId", true)
-
-            xhr.onload = function(){
-
-                if(xhr.status>=200 && xhr.status <300){
-
-                   var data = JSON.parse(xhr.responseText)
-
-                   if(data.error){
-
-
-                    document.getElementById('dataContainer').innerHTML = '<div class="error-message">' + data.error + '</div>'
-
-
-                   }
-                   else{
-
-                    displayData(data)
-                   }
-
-
-
-                }else{
-
-                    displayError()
-                }
-            }
+        function displayError(message) {
+            document.getElementById('dataContainer').innerHTML = '<p class="error">' + message + '</p>';
         }
     </script>
 </body>

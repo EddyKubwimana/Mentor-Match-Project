@@ -25,6 +25,14 @@ body {
     padding: 20px;
 }
 
+.option{
+    display : none
+}
+
+.option img{
+    display: none;
+}
+
 .logo img {
     height: 50px;
 }

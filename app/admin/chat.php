@@ -14,9 +14,7 @@ isLogin();
 
 
 <div class="sidebar">
-    <div class="logo">
-        <img src="school_logo.png" alt="School Logo">
-    </div>
+ <a class = "option"><img src = "../images/option.png"></a>
     <nav>
         <ul>
             <li><a href="../../index.php">Home</a></li>
@@ -69,6 +67,6 @@ isLogin();
 </div>
 
 
-
+<script src="admin.js"></script>
 </body>
 </html>
