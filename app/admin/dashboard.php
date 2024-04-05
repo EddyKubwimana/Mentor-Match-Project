@@ -1,5 +1,8 @@
 <?php
 include("../setting/core.php");
+include("../../config.php");
+include("../function/get_your_programs.php");
+
 isLogin();
 ?>
 
@@ -21,19 +24,69 @@ isLogin();
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly; /* Change from align-content to justify-content */
-    align-items: center; /* Align items vertically in the center */
+    justify-content: left; 
+    align-items: center; 
 }
-
-#mentor, #mentee, #registration {
-    min-width: 200px;
-    min-height: 200px;
+    #registration1, #registration2,#registration2 {
+    min-width: 500px;
+    min-height: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
 }
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 999; 
+}
+
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.overlay-content p {
+    margin-bottom: 10px;
+}
+
+.overlay-content button {
+    background-color:#007bff
+
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.overlay-content button:hover {
+    background-color: #007bff;
+}
+
+.details {
+    display: none;
+    margin-top: 5px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
 
 
 
@@ -43,115 +96,107 @@ isLogin();
 <body>
 
 <div class="sidebar">
-    <a class = "option"><img src = "../images/option.png"></a>
-    <nav>
-        <ul>
-            <li><a href="../../index.php">Home</a></li>
-            <li><a href="course.php">Course</a></li>
-            <li><a href="mentor.php">Mentor</a></li>
-            <li><a href="#me">Meeting</a></li>
-            <li><a href="chat.php">Message</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="../action/logout_action.php">Logout</a></li>
+            <a class = "option"><img src = "../images/option.png"></a>
+            <nav>
+                        <ul>
+                            <li><a href="../../index.php">Home</a></li>
+                            <li><a href="course.php">Course</a></li>
+                            <li><a href="mentor.php">Mentor</a></li>
+                            <li><a href="#me">Meeting</a></li>
+                            <li><a href="chat.php">Message</a></li>
+                            <li><a href="profile.php">Profile</a></li>
+                            <li><a href="../action/logout_action.php">Logout</a></li>
 
-        </ul>
-    </nav>
+                        </ul>
+            </nav>
+               
 </div>
 
-<div class="content">
-    <header>
-        <h1>Welcome, <?php echo $_SESSION['firstName']?>!</h1>
-    </header>
+ <div class="content">
+                    <header>
+                        <h1>Welcome, <?php echo $_SESSION['firstName']?>!</h1>
+                    </header>
 
-    <main>
+        <main id = "main" class = "main" >
 
-    <h3> Mentor Or Mentee Registration </h3>
+            <h3> Mentor Or Mentee Registration </h3>
 
-    <div class = "registration-container">
-
-
-
-        <div id = "mentor" onclick="registerMentor(<?php echo $_SESSION['userId']?>)">
-
-        <p>Mentor</p>
-
-        </div>
-
-        <div id = "mentee" onclick="registerMentee(<?php echo $_SESSION['userId']?>)">
-
-            <p>Mentee</p>
-
-        </div>
+            <div class = "registration-container">
 
 
-        <div id = "registration">
-
-            <p> Registration</p>
-
-        </div>
-
-
-   </div>  
-
-   <h3> Courses Registration <h3>
-
-   <div class = "registration-container">
-
-        <div id = "mentor">
-
-        <p>Mentor</p>
-
-        </div>
-
-        <div id = "mentee">
-
-            <p>Mentee</p>
-
-        </div>
+                        <div id="registration1" class="registration">
+                                    <p>Register or Check if you are a mentor or Mentee</p>
+                                    <?php
+                                    isMentee($conn,$_SESSION["userId"]);
+                                    isMentor($conn,$_SESSION["userId"]);
+                                    ?>
 
 
-        <div id = "registration">
-
-            <p> Registration</p>
-
-        </div>
 
 
-   </div>  
 
 
-   <h3> Mentee or Mentor Management <h3>
 
-   <div class = "registration-container">
+                        </div>  
 
-        <div id = "mentor">
-
-        <p>Mentor</p>
-
-        </div>
-
-        <div id = "mentee">
-
-            <p>Mentee</p>
-
-        </div>
+            </div>
 
 
-        <div id = "registration">
+            <h3> Mentor Or Mentee Registration of courses </h3>
 
-            <p> Registration</p>
-
-        </div>
+            <div class = "registration-container">
 
 
-   </div>  
+                        <div id="registration2" class="registration">
+                                    <p>Register or Check if you are a mentor or Mentee</p>
+                                    <?php
+                                    isMentee($conn,$_SESSION["userId"]);
+                                    isMentor($conn,$_SESSION["userId"]);
+                                    $conn->close();
+                                    ?>
 
-   
 
-    
 
-    
-    </main>
+
+
+
+
+                        </div>  
+
+            </div>
+
+
+            <h3> Mentors and Mentees Management </h3>
+
+            <div class = "registration-container">
+
+
+                        <div id="registration2" class="registration">
+                                    <p>Register or Check if you are a mentor or Mentee</p>
+                                    <?php
+                                    isMentee($conn,$_SESSION["userId"]);
+                                    isMentor($conn,$_SESSION["userId"]);
+                                    $conn->close();
+                                    ?>
+
+
+
+
+
+
+
+                        </div>  
+
+            </div>
+
+                  
+
+                    
+                    
+
+                    
+        </main>
+
 </div>
 
 

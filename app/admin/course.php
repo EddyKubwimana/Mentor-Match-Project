@@ -24,7 +24,7 @@ isLogin();
     align-items: center; /* Align items vertically in the center */
 }
 
-#mentor, #mentee, #registration {
+ #registration1, #registration2, #registration3 {
     min-width: 200px;
     min-height: 200px;
     border-radius: 10px;

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $res->fetch_assoc();
 
     if ($row['count'] > 0) {
-        echo json_encode(array("status" => "error", "message" => "You are already a Mentor"));
+        echo json_encode(array("status" => "error", "message" => " ".$_SESSION["firstName"].", You are already a Mentor"));
     } else {
         // Insert user as mentor
         $sql_insert = "INSERT INTO Mentor (userId) VALUES (?)";
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_insert->execute();
 
         if ($stmt_insert) {
-            echo json_encode(array("status" => "success", "message" => "You are registered successfully!"));
+            echo json_encode(array("status" => "success", "message" => " ".$_SESSION["firstName"]." , You are registered successfully!"));
         } else {
             echo json_encode(array("status" => "error", "message" => "Failed to register mentor."));
         }

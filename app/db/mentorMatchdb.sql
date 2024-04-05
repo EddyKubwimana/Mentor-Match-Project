@@ -1,100 +1,71 @@
-DROP DATABASE If exists MentorMatching;
+DROP DATABASE IF EXISTS MentorMatching;
 CREATE DATABASE MentorMatching;
 USE MentorMatching;
 
 CREATE TABLE User(
-userId int primary key auto_increment,
-firstName varchar(50),
-lastName varchar(50),
-dob date,
-email varchar(50), 
-major varchar(20),
-nationality varchar(20));
-
-
+    userId INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    dob DATE,
+    email VARCHAR(50), 
+    major VARCHAR(20),
+    nationality VARCHAR(20)
+);
 
 CREATE TABLE Course(
-courseId int primary key auto_increment,
-courseName varchar(100),
-courseLevel int);
-
-
-
-CREATE TABLE Message (messageId int primary key auto_increment, 
-senderId int, 
-receiverId int,
-message varchar(2000),
-created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY(senderId) REFERENCES User(userId),
-FOREIGN KEY(receiverId) REFERENCES User(userId)
+    courseId INT PRIMARY KEY AUTO_INCREMENT,
+    courseName VARCHAR(100),
+    courseLevel INT
 );
 
-
+CREATE TABLE Message (
+    messageId INT PRIMARY KEY AUTO_INCREMENT, 
+    senderId INT NOT NULL, 
+    receiverId INT NOT NULL,
+    message VARCHAR(2000),
+    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(senderId) REFERENCES User(userId) ON DELETE CASCADE,
+    FOREIGN KEY(receiverId) REFERENCES User(userId) ON DELETE CASCADE
+);
 
 CREATE TABLE Mentor( 
-mentorId int primary key auto_increment,
-userId int,
-FOREIGN KEY (userId) REFERENCES User(userId)
+    mentorId INT PRIMARY KEY AUTO_INCREMENT,
+    userId INT NOT NULL,
+    timeadded TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userId) REFERENCES User(userId) ON DELETE CASCADE
 );
-
 
 CREATE TABLE Mentee(
-menteeId int primary key auto_increment,
-userId int,
-FOREIGN KEY (userId) REFERENCES User(userId)
+    menteeId INT PRIMARY KEY AUTO_INCREMENT,
+    userId INT NOT NULL,
+    timeadded TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userId) REFERENCES User(userId) ON DELETE CASCADE
 );
-
-
 
 CREATE TABLE MentorshipCourseRegistration(
-registrationId int primary key auto_increment,
-mentorId int,
-courseId int,
-timeadded  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY (mentorId) REFERENCES User(userId),
-FOREIGN KEY (courseId) REFERENCES Course(courseId)
+    registrationId INT PRIMARY KEY AUTO_INCREMENT,
+    mentorId INT NOT NULL,
+    courseId INT NOT NULL,
+    timeadded TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (mentorId) REFERENCES User(userId) ON DELETE CASCADE,
+    FOREIGN KEY (courseId) REFERENCES Course(courseId) ON DELETE CASCADE
 );
 
-
-
 CREATE TABLE MenteeCourseRegistration(
-registrationId int primary key auto_increment,
-menteeId int,
-courseId int,
-timeadded  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY (menteeId) REFERENCES User(userId),
-FOREIGN KEY (courseId) REFERENCES Course(courseId));
-
+    registrationId INT PRIMARY KEY AUTO_INCREMENT,
+    menteeId INT NOT NULL,
+    courseId INT NOT NULL,
+    timeadded TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (menteeId) REFERENCES User(userId) ON DELETE CASCADE,
+    FOREIGN KEY (courseId) REFERENCES Course(courseId) ON DELETE CASCADE
+);
 
 CREATE TABLE Matching (
-matchingId int primary key auto_increment,
-mentorId int,
-menteeId int,
-status enum("Pending","Accepted","Rejected"),
-FOREIGN KEY (mentorId) REFERENCES User(userId),
-FOREIGN KEY (menteeId) REFERENCES User(userId));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    matchingId INT PRIMARY KEY AUTO_INCREMENT,
+    mentorId INT NOT NULL,
+    menteeId INT NOT NULL,
+    status ENUM("Pending","Accepted","Rejected"),
+    timeadded TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (mentorId) REFERENCES User(userId) ON DELETE CASCADE,
+    FOREIGN KEY (menteeId) REFERENCES User(userId) ON DELETE CASCADE
+);
