@@ -9,7 +9,6 @@ isLogin();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
 
@@ -69,15 +68,13 @@ isLogin();
 
     <div class = "registration-container">
 
-
-
-        <div id = "mentor" onclick="registerMentor(<?php echo $_SESSION['userId']?>)">
+        <div id = "mentor">
 
         <p>Mentor</p>
 
         </div>
 
-        <div id = "mentee" onclick="registerMentee(<?php echo $_SESSION['userId']?>)">
+        <div id = "mentee">
 
             <p>Mentee</p>
 
