@@ -28,9 +28,11 @@ isLogin();
     justify-content: center; 
     align-items: center; 
 }
-    #registration1, #registration2,#registration2 {
+    #registration1, #registration2,#registration2, .registration {
     min-width: 500px;
     min-height: 300px;
+    margin-left : 10px;
+    margin-right : 10px
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -231,7 +233,7 @@ span{
             </div>
 
 
-            <h3> Mentor Or Mentee Registration of courses </h3>
+            <h3> Course Registration and Management</h3>
 
             <div class = "registration-container">
 
@@ -239,20 +241,64 @@ span{
                         <div id="registration2" class="registration">
 
                            
-                            <h5> Add a course you want to mentor</h5>
-                            <button onclick = "yewe()">Add A course</button>
+                        <h5> Add a course you want to mentor</h5>
+                        <form method = "post">
+
+                            <select id="select-mentor-course">
+                            <option name = "courseId"  value="">Select a course</option>
+                                <?php displayCourse($conn) ?>
+                            </select>
+                            <button onclick = 'addMentorCourse()'> <img src = "../images/add.png"></button>
+
+                        </form>
 
                          
 
-                           <h5> Add a course you want to be mentored</h5>
+                         <h5> Add a course you want to be mentored</h5>
 
-                        
-                            <button onclick = "yewe()">click on me</button>
-                          
+                        <form method = "post">
 
 
+                        <select id="select-mentee-course">
+                             <option name = "courseId"  value="">Select a course</option>
+                             <?php displayCourse($conn) ?>
+                        </select>
+                        <button onclick = 'addMenteeCourse()'> <img src = "../images/add.png"></button>
+
+                       </form>
 
                         </div>  
+
+<div class ="registration">
+
+                           
+<h5>Remove A course you mentor</h5>
+<form method = "post">
+
+    <select id="remove-mentor-course">
+    <option name = "courseId"  value="">Select a course</option>
+        <?php displayCourseMentoring($conn, $_SESSION['userId']) ?>
+    </select>
+    <button onclick = 'removeMentorCourse()'> <img src = "../images/add.png"></button>
+
+</form>
+
+ 
+
+ <h5> Remove A course you are mentored in</h5>
+
+            <form method = "post">
+
+
+            <select id="remove-mentee-course">
+                <option name = "courseId"  value="">select a course</option>
+                <?php displayCourseMenteeing($conn,$_SESSION['userId']) ?>
+            </select>
+            <button onclick = 'removeMenteeCourse()'> <img src = "../images/add.png"></button>
+
+</form>
+
+</div>  
 
             </div>
 
@@ -290,6 +336,21 @@ span{
             
         
         </div>
+
+        <div class="options">
+            
+            <p> Mentored Courses<p>
+            
+        
+        </div>
+
+        <div class="options">
+            
+            <p> Mentoring Courses<p>
+            
+        
+        </div>
+            
             
 
                     

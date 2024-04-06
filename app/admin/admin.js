@@ -134,19 +134,18 @@ $(document).ready(function() {
     });
 
     $('.mentor').click(function(event) {
-        event.stopPropagation(); // Prevent the click event from bubbling up to the parent div
-        
-        // Get the user type (mentor or mentee)
+        event.stopPropagation(); 
+       
         var userType = $(this).siblings('p').text();
         
-        // Send AJAX request to unregister.php
+        
         $.ajax({
             url: '../action/unregister_mentor.php',
             type: 'POST',
             dataType: 'json',
-            data: { userType: userType }, // Send the user type to the PHP script
+            data: { userType: userType }, 
             success: function(response) {
-                // Display the overlay with the response message
+
                 var overlay = $('<div class="overlay"></div>');
                 var overlayContent = $('<div class="overlay-content"></div>');
                 var message = $('<p></p>').text(response.message);
@@ -168,19 +167,18 @@ $(document).ready(function() {
     
 
     $('.mentee').click(function(event) {
-        event.stopPropagation(); // Prevent the click event from bubbling up to the parent div
-        
-        // Get the user type (mentor or mentee)
+        event.stopPropagation(); 
+      
         var userType = $(this).siblings('p').text();
         
-        // Send AJAX request to unregister.php
+        
         $.ajax({
             url: '../action/unregister_mentee.php',
             type: 'POST',
             dataType: 'json',
-            data: { userType: userType }, // Send the user type to the PHP script
+            data: { userType: userType }, 
             success: function(response) {
-                // Display the overlay with the response message
+              
                 var overlay = $('<div class="overlay"></div>');
                 var overlayContent = $('<div class="overlay-content"></div>');
                 var message = $('<p></p>').text(response.message);
@@ -203,11 +201,149 @@ $(document).ready(function() {
 });
 
 
+       
+function addMentorCourse(){
 
-function yewe(){
+    event.preventDefault();
 
-    alert("Uramfyonze !")
-};
+    
+    var courseId = document.getElementById('select-mentor-course').value;
+
+
+    $.ajax({
+            url: '../action/register_course_mentor.php',
+            type: 'POST',
+            data: {courseId: courseId},
+            dataType: 'json',
+        
+            success: function(response) {
+           
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p></p>').text(response.message);
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        overlay.remove();
+                       
+                    });
+                    
+                    overlayContent.append(message, closeButton);
+                    overlay.append(overlayContent);
+                    $('body').append(overlay);
+                },
+            })
+
+
+}
+            
+            
+ 
+
+
+function addMenteeCourse(){
+
+    event.preventDefault();
+
+    
+    var courseId = document.getElementById('select-mentee-course').value;
+
+        $.ajax({
+            url: '../action/register_course_mentee.php',
+            type: 'POST',
+            data: {courseId: courseId},
+            dataType: 'json',
+            success: function(response) {
+           
+                var overlay = $('<div class="overlay"></div>');
+                var overlayContent = $('<div class="overlay-content"></div>');
+                var message = $('<p></p>').text(response.message);
+                var closeButton = $('<button>Close</button>').click(function() {
+                    overlay.remove();
+                   
+                });
+                
+                overlayContent.append(message, closeButton);
+                overlay.append(overlayContent);
+                $('body').append(overlay);
+            },
+        })
+       
+}
+
+
+
+function removeMenteeCourse(){
+
+    event.preventDefault();
+
+    
+    var courseId = document.getElementById('remove-mentee-course').value;
+
+        $.ajax({
+            url: '../action/remove_course_mentee.php',
+            type: 'POST',
+            data: {courseId: courseId},
+            dataType: 'json',
+            success: function(response) {
+           
+                var overlay = $('<div class="overlay"></div>');
+                var overlayContent = $('<div class="overlay-content"></div>');
+                var message = $('<p></p>').text(response.message);
+                var closeButton = $('<button>Close</button>').click(function() {
+                    overlay.remove();
+                   
+                });
+                
+                overlayContent.append(message, closeButton);
+                overlay.append(overlayContent);
+                $('body').append(overlay);
+            },
+        })
+       
+}
+
+
+function removeMentorCourse(){
+
+    event.preventDefault();
+
+    
+    var courseId = document.getElementById('remove-mentor-course').value;
+
+        $.ajax({
+            url: '../action/remove_ course_mentor.php',
+            type: 'POST',
+            data: {courseId: courseId},
+            dataType: 'json',
+            success: function(response) {
+           
+                var overlay = $('<div class="overlay"></div>');
+                var overlayContent = $('<div class="overlay-content"></div>');
+                var message = $('<p></p>').text(response.message);
+                var closeButton = $('<button>Close</button>').click(function() {
+                    overlay.remove();
+                   
+                });
+                
+                overlayContent.append(message, closeButton);
+                overlay.append(overlayContent);
+                $('body').append(overlay);
+            },
+        })
+       
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
