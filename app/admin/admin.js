@@ -204,6 +204,13 @@ $(document).ready(function() {
 
 
 
+function yewe(){
+
+    alert("Uramfyonze !")
+};
+
+
+
 
   
 

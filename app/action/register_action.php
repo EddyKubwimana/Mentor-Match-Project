@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 include("../../config.php");
-
 // Validate and sanitize the input data
     $firstName = filter_var($_POST["firstname"], FILTER_SANITIZE_STRING);
     $lastName = filter_var($_POST["lastname"], FILTER_SANITIZE_STRING);

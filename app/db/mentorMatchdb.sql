@@ -9,6 +9,7 @@ CREATE TABLE User(
     dob DATE,
     email VARCHAR(50), 
     major VARCHAR(20),
+    passwd VARCHAR(1000),
     nationality VARCHAR(20)
 );
 

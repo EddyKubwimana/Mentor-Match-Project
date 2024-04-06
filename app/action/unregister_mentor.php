@@ -17,7 +17,6 @@ else{
     echo json_encode(array("status" => "error", "message" => "Your request failed ".$_SESSION["firstName"].""));
 
 
-
 }
 
 
