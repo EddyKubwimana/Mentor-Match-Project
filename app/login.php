@@ -111,7 +111,7 @@ include("../setting/core.php");
     <form id="login-form" class="login-form" method="post">
         <input type="text" name="email" placeholder="email" required>
         <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="submit">
+        <input type="submit" value="Login In">
         <div class="signup-link">
             Don't have an account? <a href="register.php">Sign up</a>
         </div>

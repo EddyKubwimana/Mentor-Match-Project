@@ -173,7 +173,7 @@ input[type="submit"]:hover {
               </select>
               <input id = "password"type="password" name="password" placeholder="Password" required>
               <input id = "confirmpassword" type="password" name="confirmPassword" placeholder="Confirm Password" required>
-              <input type="submit" value="Register">
+              <input type="submit" value="Sign Up">
               <div class="signup-link">
                   Do you have account? <a href="login.php">Log In</a>
               </div>
@@ -273,60 +273,42 @@ input[type="submit"]:hover {
         .catch(error => {
             console.error("Error fetching countries:", error);
         });
-
-      
-        const registrationForm = document.getElementById("registrationForm");
-        registrationForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-           
-            const formData = new FormData(this);
-            for (const entry of formData.entries()) {
-                console.log(entry[0] + ": " + entry[1]);
-            }
-        });
     });
 
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+    
+    $("#registrationForm").submit(function(event) {
     event.preventDefault();
     
     var formData = new FormData(this);
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", this.action, true);
-    xhr.setRequestHeader("Accept", "application/json");
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status >= 200 && xhr.status < 300) {
-              
-                document.getElementById("registrationForm").reset(); 
-            } else if(xhr.status == 402) {
-
-              var message = document.getElementById("message");
-
-              message.innerHTML = "<p> You have successfully created an account!</p>" ;
-              message.style.color= "blue";
-
-               
+    $.ajax({
+        url: this.action,
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        success: function(response) {
+            var messageElement = $("#message");
+            if (response.status === "success") {
+                messageElement.html("<p>You have successfully created an account!</p>").css("color", "blue");
+                $("#registrationForm")[0].reset();
+            } else {
+                messageElement.html("<p>" + response.message + "</p>").css("color", "red");
             }
-
-            else{
-
-
-              var message = document.getElementById("message");
-
-              message.innerHTML = "<p> An erroc occured, try again !</p>" ;
-              message.style.color= "red";
-
-               
-
-            }
-            
+        },
+        error: function(xhr, status, error) {
+            $("#message").html("<p>An error occurred, please try again!</p>").css("color", "red");
         }
-    };
-
-    xhr.send(formData);
+    });
 });
+
+   
+
+
+
+
 function isValidName(name) {
     const nameRegex = /^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/;
     return nameRegex.test(name);

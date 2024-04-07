@@ -7,6 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $courseId = $_POST['courseId'];
     $menteeId = $_SESSION['userId'];
 
+    
+
     $check = "SELECT * From MenteeCourseRegistration WHERE courseId =$courseId";
 
     $verifier =$conn->query($check);

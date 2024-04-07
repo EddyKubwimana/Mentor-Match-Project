@@ -4,6 +4,8 @@ include("../../config.php");
 include("../function/get_your_programs.php");
 isLogin();
 
+$userId = $_SESSION['userId'];
+
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +15,7 @@ isLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
@@ -139,6 +142,32 @@ span{
 
 }
 
+.mentor-status {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.mentor-status p {
+    margin: 0 0 10px;
+}
+
+.mentor-status button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mentor-status button:hover {
+    background-color: #007bff;
+}
+
 
 .container-search {
     min-width: 600px;
@@ -181,6 +210,10 @@ h1 {
   box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
 }
 
+#mentorInfo{
+
+    margin-top: 20px;
+}
 
 
 
@@ -212,8 +245,7 @@ h1 {
 
 
     <div class="container-search">
-        <h1>Search a mentor </h1>
-        <input type="text" id="searchInput"  class = "search-input" placeholder="Search for a mentor or Mentee...">
+        <input type="text" id="searchInput"  class = "search-input" placeholder="Search a mentor .">
         <div id="searchResults"></div>
     </div>
 
@@ -224,19 +256,25 @@ h1 {
 
             <h3> Mentor Or Mentee Registration </h3>
 
-            <div class = "registration-container">
+            <div class="registration-container" onclick="updateStatus()">
+                <div id="registration1" class="registration">
+                    <p><span>Register</span> Or <span>Withdraw</span> From</p>
+                     <p>Becoming A <span>Mentee</span> Or <span>Mentor</span></p>
+                     <div class="mentor-status">
+                        <p>Mentor Status: <span id="mentorStatus"></span></p>
+                        <button id="mentorAction"onclick = 'generalOptionMentor(<?php echo"$userId"?>)'></button>
+                    </div>
+                    
+                    <div class="mentor-status">
+                        <p>Mentor Status: <span id="menteeStatus"></span></p>
+                        <button id="menteeAction" onclick = 'generalOptionMentee(<?php echo"$userId"?>)' ></button>
+                   </div>
 
 
-                        <div id="registration1" class="registration">
-                                    <p> <span>Register</span> Or <span>Withdraw</span> From </p>
-                                    <p> Becoming A <span>Mentee</span> Or <span>Mentor</span> </p>
-                                    <?php
-                                    isMentee($conn,$_SESSION["userId"]);
-                                    isMentor($conn,$_SESSION["userId"]);
-                                    ?>
-                        </div>  
-
+                </div>
             </div>
+
+
 
 
             <h3> Course Registration and Management</h3>
@@ -282,10 +320,9 @@ h1 {
 <form method = "post">
 
     <select id="remove-mentor-course">
-    <option name = "courseId"  value="">Select a course</option>
-        <?php displayCourseMentoring($conn, $_SESSION['userId']) ?>
+    <option name = "courseId"  value="">Select a course</option> 
     </select>
-    <button onclick = 'removeMentorCourse()'> <img src = "../images/add.png"></button>
+    <button onclick = 'removeMentorCourse()'> <img src = "../images/delete.png"></button>
 
 </form>
 
@@ -300,7 +337,7 @@ h1 {
                 <option name = "courseId"  value="">select a course</option>
                 <?php displayCourseMenteeing($conn,$_SESSION['userId']) ?>
             </select>
-            <button onclick = 'removeMenteeCourse()'> <img src = "../images/add.png"></button>
+            <button onclick = 'removeMenteeCourse()'> <img src = "../images/delete.png"></button>
 
 </form>
 
@@ -315,28 +352,28 @@ h1 {
             
 
 
-        <div class="options">
+        <div class="options" onclick = "displayMentor()">
             
             <p> Mentors<p>
             
         
         </div>
 
-        <div class="options">
+        <div class="options" onclick = "displayMentee()">
             
             <p> Mentees<p>
             
         
         </div>
 
-        <div class="options">
+        <div class="options" onclick = "displayPendingMentee()" >
             
             <p> Pending Request<p>
             
         
         </div>
 
-        <div class="options">
+        <div class="options"  onclick = "displayPending()">
             
             <p> Pending Demand<p>
             
@@ -346,6 +383,17 @@ h1 {
         </main>
 
 </div>
+
+
+<div class ="registration-container">
+
+    <div id="mentorInfo">
+
+
+    </div>
+
+</div>
+
 
 
 <script src="admin.js"></script>

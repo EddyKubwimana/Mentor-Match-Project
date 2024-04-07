@@ -5,7 +5,7 @@ include("../../config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userId = $_POST['userId'];
 
-    // Check if the user is already a mentor
+    
     $sql_check = "SELECT COUNT(*) AS count FROM Mentee WHERE userId = ?";
     $stmt_check = $conn->prepare($sql_check);
     $stmt_check->bind_param("i", $userId);
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row['count'] > 0) {
         echo json_encode(array("status" => "error", "message" => "You are already a Mentee ".$_SESSION["Firstname"].""));
     } else {
-        // Insert user as mentor
+    
         $sql_insert = "INSERT INTO Mentee (userId) VALUES (?)";
         $stmt_insert = $conn->prepare($sql_insert);
         $stmt_insert->bind_param("i", $userId);

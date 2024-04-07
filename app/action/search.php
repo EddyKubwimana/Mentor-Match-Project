@@ -57,6 +57,8 @@ WHERE
     
 )
 
+AND U.userId != $userId
+
             "; //AND U.userId != $loggedInUserId to be added after;
 
 $result = $conn->query($sql);

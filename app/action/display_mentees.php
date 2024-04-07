@@ -5,7 +5,7 @@ include("../../config.php");
 function getMentorData($conn, $mentorId) {
     $mentorData = array();
 
-    $sql = "SELECT firstName, lastName, email, matchingId FROM User INNER JOIN  Matching ON  User.userId = Matching.menteeId  WHERE Matching.mentorId = ? And Matching.status = 'Pending'" ;
+    $sql = "SELECT firstName, lastName, email, matchingId FROM User INNER JOIN  Matching ON  User.userId = Matching.menteeId  WHERE Matching.mentorId = ? And Matching.status = 'Accepted'" ;
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $mentorId);
     $stmt->execute();
