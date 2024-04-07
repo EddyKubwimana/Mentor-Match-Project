@@ -226,9 +226,7 @@ h1 {
             <nav>
                         <ul>
                             <li><a href="../../index.php">Home</a></li>
-                            <li><a href="course.php">Course</a></li>
-                            <li><a href="mentor.php">Mentor</a></li>
-                            <li><a href="#me">Meeting</a></li>
+                            <li><a href="dashboard.php">Course</a></li>
                             <li><a href="chat.php">Message</a></li>
                             <li><a href="profile.php">Profile</a></li>
                             <li><a href="../action/logout_action.php">Logout</a></li>
