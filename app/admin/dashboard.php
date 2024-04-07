@@ -140,9 +140,30 @@ span{
 }
 
 
-.search-container {
-  position: relative;
-  display: inline-block;
+.container-search {
+    min-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#searchResults {
+    margin-top: 20px;
+}
+
+.mentor {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.mentor button {
+    padding-top: 10px
+    float: right;
 }
 
 .search-input {
@@ -150,35 +171,14 @@ span{
   border: 2px solid #ccc;
   border-radius: 25px;
   font-size: 16px;
-  width: 1020px;
+  min-width: 1028px;
   transition: all 0.3s ease;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #66afe9;
   box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
-}
-
-.search-button {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background-color: #007bff;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search-button:hover {
-  background-color: #007bff;
-}
-
-.search-button i {
-  color: white;
 }
 
 
@@ -209,10 +209,16 @@ span{
                     <header>
                         <h1>Welcome, <?php echo $_SESSION['firstName']?>!</h1>
                     </header>
-        <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search Mentor or Mentee by course Name...">
-        <button class="search-button"><i class="fas fa-search"></i></button>
-        </div>
+
+
+    <div class="container-search">
+        <h1>Search a mentor </h1>
+        <input type="text" id="searchInput"  class = "search-input" placeholder="Search for a mentor or Mentee...">
+        <div id="searchResults"></div>
+    </div>
+
+                    
+        
 
         <main id = "main" class = "main" >
 
@@ -336,24 +342,7 @@ span{
             
         
         </div>
-
-        <div class="options">
-            
-            <p> Mentored Courses<p>
-            
-        
-        </div>
-
-        <div class="options">
-            
-            <p> Mentoring Courses<p>
-            
-        
-        </div>
-            
-            
-
-                    
+          
         </main>
 
 </div>

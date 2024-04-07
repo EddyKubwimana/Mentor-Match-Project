@@ -304,8 +304,8 @@ input[type="submit"]:hover {
 
               var message = document.getElementById("message");
 
-              message.innerHTML = "<p> Your Email has an account already !</p>" ;
-              message.style.color= "red";
+              message.innerHTML = "<p> You have successfully created an account!</p>" ;
+              message.style.color= "blue";
 
                
             }
