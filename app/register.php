@@ -158,21 +158,23 @@ input[type="submit"]:hover {
 
     <div class="registrationcontainer">
   
-          <form  class="registerForm" id = "registrationForm" action="../app/action/register_action.php" method="post">
+          <form  class="registerForm" id = "registrationForm">
     
-               <input id="firstName" type="text" name="firstname" pattern="[a-zA-Z]+" title="Your name should not have number " placeholder="First name" required>
-
-
+              <input id="firstName" type="text" name="firstname" pattern="[a-zA-Z]+" title="Your name should not have number " placeholder="First name" required>
               <input id = "lastName"  type="text" name="lastname"  pattern="[a-zA-Z]+" title="Your name should not have number "  placeholder="Last Name" required>
-              <input id = "email" type="text" name="email" placeholder="Email" required>
+              <label  id ="emailnotification"></label>
+              <input id = "email" type="text" name="email" placeholder="Email" onchange= "isValidEmail()"  required>
               <input   type="text" name="major" placeholder="Major" required>
+              <label  id ="dobnotification"> </label>
               <input type="date" id="dob" name="dob" placeholder="Date Of Birth" onchange="validateAge()" required>
       
               <select id="nationality" name="nationality" required>
                   <option value="" disabled selected>Select your nationality</option>
               </select>
-              <input id = "password"type="password" name="password" placeholder="Password" required>
-              <input id = "confirmpassword" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+              <label  id ="passwordnotification"> </label>
+              <input id = "password"type="password" name="password" placeholder="Password" onchange="isStrongPassword()" required>
+              <label  id ="confirmnotification">  </label>
+              <input id = "confirmpassword" type="password" name="confirmPassword" placeholder="Confirm Password" onchange="checkSimilarity()" required>
               <input type="submit" value="Sign Up">
               <div class="signup-link">
                   Do you have account? <a href="login.php">Log In</a>
@@ -257,66 +259,57 @@ input[type="submit"]:hover {
   </body>
 
   <script>
-      document.addEventListener("DOMContentLoaded", function() {
-       
-        fetch("https://restcountries.com/v3.1/all")
-        .then(response => response.json())
-        .then(data => {
-            const nationalitySelect = document.getElementById("nationality");
-            data.forEach(country => {
-                const option = document.createElement("option");
-                option.value = country.name.common;
-                option.textContent = country.name.common;
-                nationalitySelect.appendChild(option);
-            });
-        })
-        .catch(error => {
-            console.error("Error fetching countries:", error);
+
+    var form =document.getElementById("registrationForm")
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch("https://restcountries.com/v3.1/all")
+    .then(response => response.json())
+    .then(data => {
+        const nationalitySelect = document.getElementById("nationality");
+        data.forEach(country => {
+            const option = document.createElement("option");
+            option.value = country.name.common;
+            option.textContent = country.name.common;
+            nationalitySelect.appendChild(option);
         });
+    })
+    .catch(error => {
+        console.error("Error fetching countries:", error);
     });
 
-
-    
     $("#registrationForm").submit(function(event) {
-    event.preventDefault();
-    
-    var formData = new FormData(this);
+        event.preventDefault();
 
-    $.ajax({
-        url: this.action,
-        type: "POST",
-        data: formData,
-        processData: false,
-        contentType: false,
-        dataType: "json",
-        success: function(response) {
-            var messageElement = $("#message");
-            if (response.status === "success") {
-                messageElement.html("<p>You have successfully created an account!</p>").css("color", "blue");
-                $("#registrationForm")[0].reset();
-            } else {
-                messageElement.html("<p>" + response.message + "</p>").css("color", "red");
-            }
-        },
-        error: function(xhr, status, error) {
-            $("#message").html("<p>An error occurred, please try again!</p>").css("color", "red");
+        console.log(isStrongPassword(),isValidEmail(), checkSimilarity())
+        
+        if(isStrongPassword() && isValidEmail() && checkSimilarity()){
+            var formData = new FormData(this);
+    
+            $.ajax({
+                url: "../app/action/register_action.php", 
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                success: function(response) {
+                    var messageElement = $("#message");
+                    if (response.status === "success") {
+                        messageElement.html("<p>You have successfully created an account!</p>").css("color", "blue");
+                        $("#registrationForm")[0].reset();
+                    } else {
+                        messageElement.html("<p>" + response.message + "</p>").css("color", "red");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    $("#message").html("<p>An error occurred, please try again!</p>").css("color", "red");
+                }
+            });
         }
     });
 });
 
    
-
-
-
-
-function isValidName(name) {
-    const nameRegex = /^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/;
-    return nameRegex.test(name);
-}
-function isValidName(name) {
-    const nameRegex = /^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/;
-    return nameRegex.test(name);
-}
 
 function isValidAge(dateOfBirth) {
    
@@ -330,10 +323,7 @@ function isValidAge(dateOfBirth) {
 }
 
 
-function isValidAshesiEmail(email) {
-    const regex = /^[a-zA-Z]+\.[a-zA-Z]+@ashesi\.edu\.gh$/;
-    return regex.test(email);
-}
+
 
 
 function validateAge() {
@@ -353,6 +343,117 @@ function validateAge() {
         }
     }
 
+
+
+
+
+
+function checkSimilarity(){
+
+
+var password = document.getElementById("password")
+
+var confirmPassword = document.getElementById("confirmpassword")
+
+var label = document.getElementById("confirmnotification")
+
+var p = password.value
+var c = confirmPassword.value
+
+if(p===c){
+
+   var form = document.getElementById("passwordform")
+   confirmPassword.style.color = "black"
+   label.innerHTML = "<p></p>"
+   label.style.color = "black"
+
+   return true
+
+   
+
+} else{
+    label.innerHTML = "<p> The password do not match</p>"
+    label.style.color = "red"
+    confirmPassword.style.color = "red"
+
+    return false;
+}
+
+}
+
+
+function isValidEmail() {
+    const regex = /^[a-zA-Z.!#$%&'*+/=?^_`{|}~-]+@ashesi.edu.gh$/;
+    var emailInput = document.getElementById("email");
+    var label = document.getElementById("emailnotification");
+    email = emailInput.value.trim()
+
+    if (regex.test(email)) {
+        emailInput.style.color = "black";
+        label.innerHTML = "<p></p>";
+        label.style.color = "black";
+        return true;
+    } else {
+        console.log("I am still here !");
+        emailInput.style.color = "red";
+        label.innerHTML = "<p>Use a valid Ashesi University email !</p>";
+        label.style.color = "red";
+
+        return false;
+    }
+}
+
+
+
+function isStrongPassword() {
+
+var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+var password = document.getElementById("password")
+
+var notification = document.getElementById("passwordnotification")
+
+if (regex.test(password.value)){
+
+password.style.color = "black"
+notification.innerHTML  = "<p></p>"
+notification.style.color = "black"
+
+return true
+
+
+
+
+}
+
+else{
+notification.innerHTML  = "<p> Your password is weak. do a 8 combination A-Z, @ ...</p>"
+password.style.color = "red"
+notification.style.color = "red"
+
+return false
+
+
+}
+    }
+
+
+
+form.addEventListener("submit", function(event) {
+  var emailInput = document.getElementById("email");
+  var password = document.getElementById("password")
+
+  if (isValidEmail()&& isStrongPassword()) {
+
+    return true
+  
+  }
+
+  else{
+
+    event.preventDefault(); 
+    return false
+  }
+});
 
 
 

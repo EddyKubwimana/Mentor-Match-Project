@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="favicon.png">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+  <meta name="description" content="mentor" />
+  
 
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -73,9 +73,9 @@
             <li><a href="contact.php">Contact</a></li>
           </ul>
 
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
+          <a href="register.php" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
 
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+          <a href="register.php" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
           </a>
 
@@ -123,7 +123,7 @@
             <div class="address mt-4">
               <i class="icon-room"></i>
               <h4 class="mb-2">Location:</h4>
-              <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+              <p>Ashesi University , 1 University Avenue</p>
             </div>
 
             <div class="open-hours mt-4">
@@ -138,19 +138,19 @@
             <div class="email mt-4">
               <i class="icon-envelope"></i>
               <h4 class="mb-2">Email:</h4>
-              <p>info@Untree.co</p>
+              <p>eddy.kubwimana@ashesi.edu.gh</p>
             </div>
 
             <div class="phone mt-4">
               <i class="icon-phone"></i>
               <h4 class="mb-2">Call:</h4>
-              <p>+1 1234 55488 55</p>
+              <p>+233599346549</p>
             </div>
 
           </div>
         </div>
         <div class="col-lg-7 mr-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="#">
+          <form action="action/contact_action.php">
             <div class="row">
               <div class="col-6 mb-3">
                 <input type="text" class="form-control" placeholder="Your Name">
