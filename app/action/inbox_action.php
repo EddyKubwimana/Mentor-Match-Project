@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include("../../config.php");
 
@@ -11,8 +12,8 @@ function getMessageData($conn, $userId) {
         UNION
         SELECT senderId AS counterpartId FROM Message WHERE receiverId = $userId
     ) AS counterpartIds ON U.userId = counterpartIds.counterpartId
-"
- ;  $result = $conn->query($sql);
+";
+   $result = $conn->query($sql);
     $messageData = array();
     if ($result->num_rows > 0) {
 

@@ -26,11 +26,9 @@ ORDER BY
     M.created; 
 "
  ;
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-       $messageData = array();
+   
+    $result = $conn->query($sql);
+    $messageData = array();
     if ($result->num_rows > 0) {
 
         while($row = $result->fetch_assoc()){
