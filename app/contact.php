@@ -85,7 +85,7 @@
   </nav>
   
 
-  <div class="untree_co-hero overlay" style="background-image: url('images/img-school-2-min.jpg');">
+  <div class="untree_co-hero overlay" style="background-image: url('images/lecture.jpg');">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-12">
@@ -96,7 +96,7 @@
                 <p>Empowering minds, igniting futures - that's the promise of  education mentorship.</p>
               </div>
 
-              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore courses</a></p>
+              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="index.php" class="btn btn-secondary">Explore mentorship Programs</a></p>
 
             </div>
 

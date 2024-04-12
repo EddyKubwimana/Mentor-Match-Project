@@ -12,8 +12,13 @@ function getMentorData($conn, $mentorId) {
     $result = $stmt->get_result();
        $mentorData = array();
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $mentorData[] = $row;
+
+        while($row = $result->fetch_assoc()){
+
+            $mentorData[] = $row;
+    
+           };
+      
     }
 
     return $mentorData;

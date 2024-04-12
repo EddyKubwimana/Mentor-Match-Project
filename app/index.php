@@ -75,17 +75,13 @@
 
           <a href="register.php" class="btn-book btn btn-secondary btn-sm menu-absolute">Register Now</a>
 
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
-
         </div>
       </div>
     </div>
   </nav>
   
 
-  <div class="untree_co-hero overlay" style="background-image: url('images/hero-img-1-min.jpg');">
+  <div class="untree_co-hero overlay" style="background-image: url('images/ashesi_admission.jpg');">
 
 
     <div class="container">
@@ -116,7 +112,7 @@
     <div class="container">
       <div class="row justify-content-center mb-3">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="line-bottom text-center mb-4">Browse Mentors & Mentees</h2>
+          <h2 class="line-bottom text-center mb-4">Available Mentorship Programs</h2>
         </div>
       </div>
       <div class="row align-items-stretch">
@@ -127,7 +123,7 @@
             </div>
             <div>
               <h3>Computer Science & Information Systems Mentors  </h3>
-              <span>100 Mentors</span>
+              <span>10 Mentors</span>
            </div>
           </a>
         </div>
@@ -138,7 +134,7 @@
             </div>
             <div>
               <h3>Business Administration Mentors </h3>
-              <span>75 Mentors</span>
+              <span>13 Mentors</span>
           </div>
           </a>
         </div>
@@ -185,7 +181,7 @@
             </div>
             <div>
               <h3>Economics</h3>
-              <span>51 Mentors</span>
+              <span>9 Mentors</span>
             </div>
           </a>
         </div>
@@ -203,11 +199,11 @@
 
           <div class="row count-numbers mb-5">
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-              <span class="counter d-block"><span data-number="145s">0</span><span>+</span></span>
+              <span class="counter d-block"><span data-number="10s">0</span><span>+</span></span>
               <span class="caption-2">No. Mentors</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <span class="counter d-block"><span data-number="49">0</span><span></span></span>
+              <span class="counter d-block"><span data-number="11">0</span><span></span></span>
               <span class="caption-2">No. Mentees</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -223,9 +219,9 @@
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
           <div class="bg-1"></div>
-          <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
+          <a href="https://youtu.be/drL55Zmv-pk?si=3G5j6dbEYIEmJU72" data-fancybox class="video-wrap">
             <span class="play-wrap"><span class="icon-play"></span></span>
-            <img src="images/img-school-4-min.jpg" alt="Image" class="img-fluid rounded">
+            <img src="images/tinkering.jpg" alt="Image" class="img-fluid rounded">
           </a>
         </div>
       </div>
@@ -244,7 +240,7 @@
         <div class="col-lg-6"  data-aos="fade-up" data-aos-delay="100">
           <div class="media-h d-flex h-100">
             <figure>
-              <img src="images/img-school-1-min.jpg" alt="Image">
+              <img src="images/tichana.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
               <h2 class="mb-3"><a href="#">Mentoring for Tomorrow's Leaders</a></h2>
@@ -257,7 +253,7 @@
         <div class="col-lg-6"  data-aos="fade-up" data-aos-delay="200">
           <div class="media-h d-flex h-100">
             <figure>
-              <img src="images/img-school-2-min.jpg" alt="Image">
+              <img src="images/tichana.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
               <h2 class="mb-3"><a href="#">Teaching is learning</a></h2>
@@ -279,7 +275,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 mr-auto mb-5 mb-lg-0"  data-aos="fade-up" data-aos-delay="0">
-          <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid">
+          <img src="images/tinkering.jpg" alt="image" class="img-fluid">
         </div>
         <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
           <h3 class="line-bottom mb-4">Why Choose Us</h3>

@@ -1,4 +1,4 @@
-
+//function to register as mentor
 function registerMentor(userId) {
     $.ajax({
         url: '../action/register_mentor.php',
@@ -39,7 +39,7 @@ function registerMentor(userId) {
 }
 
 
-
+// function to register a mentee
 function registerMentee(userId) {
     $.ajax({
         url: '../action/register_mentee.php',
@@ -80,13 +80,7 @@ function registerMentee(userId) {
 }
 
 
-function displayMentorshipRegistration(){
-
-
-}
-
-
-
+// function to management mentee or mentor status
 function mentorshipManagement(userId) {
     $.ajax({
         url: '../action/mentorship_management.php',
@@ -128,97 +122,7 @@ function mentorshipManagement(userId) {
 }
 
 
-/*$(document).ready(function() {
-    $('#registration1').click(function() {
-        $.ajax({
-            url: '../action/isMentor.php',
-            type: 'GET',
-            dataType: 'text', 
-            success: function(response) {
-                
-                if (response === "registered") {
-                    $('#registration1').html("<p><span>Withdraw</span> From Becoming A <span>Mentor</span></p>");
-                } else {
-                    $('#registration1').html("<p><span>Register</span> To Become A <span>Mentor</span></p>");
-                }
-            },
-            error: function(xhr, status, error) {
-                
-                console.error("Ajax request failed:", status, error);
-            }
-        });
-    });
-
-    $('.mentor').click(function(event) {
-        event.stopPropagation(); 
-       
-        var userType = $(this).siblings('p').text();
-        
-        
-        $.ajax({
-            url: '../action/unregister_mentor.php',
-            type: 'POST',
-            dataType: 'json',
-            data: { userType: userType }, 
-            success: function(response) {
-
-                var overlay = $('<div class="overlay"></div>');
-                var overlayContent = $('<div class="overlay-content"></div>');
-                var message = $('<p></p>').text(response.message);
-                var closeButton = $('<button>Close</button>').click(function() {
-                    overlay.remove();
-                   
-                    
-                });
-
-                overlayContent.append(message, closeButton);
-                overlay.append(overlayContent);
-                $('body').append(overlay);
-            },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error: " + error);
-            }
-        });
-    });
-    
-
-   $('.mentee').click(function(event)
-        event.stopPropagation(); 
-      
-        var userType = $(this).siblings('p').text();
-        
-        
-        $.ajax({
-            url: '../action/unregister_mentee.php',
-            type: 'POST',
-            dataType: 'json',
-            data: { userType: userType }, 
-            success: function(response) {
-              
-                var overlay = $('<div class="overlay"></div>');
-                var overlayContent = $('<div class="overlay-content"></div>');
-                var message = $('<p></p>').text(response.message);
-                var closeButton = $('<button>Close</button>').click(function() {
-                    
-                    overlay.remove();
-                    
-                    
-                });
-
-                overlayContent.append(message, closeButton);
-                overlay.append(overlayContent);
-                $('body').append(overlay);
-            },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error: " + error);
-            }
-        });
-    });
-});
-
-
-*/
-
+// function to add course someone want to mentor
 function addMentorCourse(){
 
     event.preventDefault();
@@ -255,6 +159,8 @@ function addMentorCourse(){
             
  
 
+
+// function to add a course someone want to be mentored in
 
 function addMenteeCourse(){
 
@@ -318,7 +224,7 @@ function removeMenteeCourse(){
        
 }
 
-
+// function to remove a course
 function removeMentorCourse(){
 
     event.preventDefault();
@@ -350,6 +256,7 @@ function removeMentorCourse(){
 }
 
 
+// function to handle search
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
@@ -358,12 +265,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const searchValue = searchInput.value.trim();
         searchResults.innerHTML = "";
 
-        if (searchValue.length === 0) return;
-
-        // Send search input value to the backend for filtering
-        fetch('../action/search.php?query=' + encodeURIComponent(searchValue)) // Encode the search value
+        if (searchValue.length === 0)return
+        fetch('../action/search.php?query=' + encodeURIComponent(searchValue)) 
             .then(response => response.json())
             .then(data => {
+
+                if (data.length===0){
+                    const mentorDiv = document.createElement("div");
+                    mentorDiv.classList.add("mentor");
+                    mentorDiv.innerHTML ='<h6>No search found that match  "'+searchValue+'", try different key</h6>';
+                    searchResults.appendChild(mentorDiv);
+                    return 
+                }
                 data.forEach(mentor => {
                     const mentorDiv = document.createElement("div");
                     mentorDiv.classList.add("mentor");
@@ -380,6 +293,8 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error("Error fetching data:", error));
     });
 });
+
+// function to handle mentorship request
 
 function requestMentor(mentorId) {
    
@@ -420,6 +335,7 @@ function requestMentor(mentorId) {
 }
 
 
+// function to update mentor status
 function updateStatus() {
     $.ajax({
         url: '../action/isMentor.php',
@@ -461,15 +377,12 @@ $(document).ready(function() {
     });
 });
 
-
+// function to display mentor and option either to withdraw or register for mentorship
 function generalOptionMentor(userId){
 
     var buttonText = document.getElementById("mentorAction")
 
     var option = buttonText.textContent
-
-    console.log(buttonText);
-    console.log(option);
 
     if(option==="withdraw"){
 
@@ -509,7 +422,7 @@ function generalOptionMentor(userId){
 
 }
 
-
+// function to display mentee and option either to withdraw or register for mentoring 
 function generalOptionMentee(userId){
 
     var buttonText = document.getElementById("menteeAction")
@@ -588,14 +501,28 @@ function displayMentor() {
     fetch('../action/display_mentors.php') 
             .then(response => response.json())
             .then(data => {
+                if(data.length === 0){
+
+
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p> you have no  Mentor, consider requesting  some !</p>');
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        
+                        overlay.remove();})
+
+                        overlayContent.append(message, closeButton);
+                        overlay.append(overlayContent);
+                        $('body').append(overlay);
+
+                }
                 data.forEach(mentor => {
                 var mentorCard = '<div class="mentor">';
                 mentorCard += '<p><span>Your mentor</span></p>';
                 mentorCard += '<p>Name: ' + mentor.firstName + ' ' + mentor.lastName + '</p>';
                 mentorCard += '<p>Email: ' + mentor.email + '</p>';
                 mentorCard += '<button onclick="suspendMentorship(' + mentor.matchingId + ')">Suspend Mentorship</button>';
-                mentorCard += '</div>';
-                $('#mentorInfo').append(mentorCard); 
+                mentorCard += '</div>'; 
                 });
             })
             .catch(error => console.error("Error fetching data:", error));
@@ -603,26 +530,39 @@ function displayMentor() {
     }
 
 
-
-    
-
-
-function suspendMentorship(mentorId) {
-    console.log('Suspend mentorship for mentor ID: ' + mentorId);
-}
 
 
 function displayPending(){
 
+   
+
     fetch('../action/display_pending_demand.php') 
             .then(response => response.json())
             .then(data => {
+
+                
+                if(data.length === 0){
+
+
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p> No pending demand found !</p>');
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        
+                        overlay.remove();})
+
+                        overlayContent.append(message, closeButton);
+                        overlay.append(overlayContent);
+                        $('body').append(overlay);
+
+                }
+                
                 data.forEach(mentor => {
                 var mentorCard = '<div class="mentor">';
-                mentorCard += '<p><span>Pending Demand Of Mentorship</span></p>';
+                mentorCard += '<p><span>Pending demand for Mentorship</span></p>';
                 mentorCard += '<p>Name: ' + mentor.firstName + ' ' + mentor.lastName + '</p>';
                 mentorCard += '<p>Email: ' + mentor.email + '</p>';
-                mentorCard += '<button onclick="suspendMentorship(' + mentor.matchingId+ ')">Suspend Mentorship</button>';
+                mentorCard += '<button onclick="suspendMentorship(' + mentor.matchingId+ ')">Withdraw Request</button>';
                 mentorCard += '</div>';
                 $('#mentorInfo').append(mentorCard); 
                 });
@@ -630,17 +570,32 @@ function displayPending(){
             .catch(error => console.error("Error fetching data:", error));
     
     }
-
-function suspendMentorship(mentorId) {
-    console.log('Suspend mentorship for mentor ID: ' + mentorId);
-}
-
-
 function displayMentee() {
+
 
     fetch('../action/display_mentees.php') 
             .then(response => response.json())
             .then(data => {
+
+               
+
+                if(data.length === 0){
+
+
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p> you have no  Mentee, consider having some !</p>');
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        
+                        overlay.remove();})
+
+                        overlayContent.append(message, closeButton);
+                        overlay.append(overlayContent);
+                        $('body').append(overlay);
+
+                }
+
+                
                 data.forEach(mentor => {
                 var mentorCard = '<div class="mentor">';
                 mentorCard += '<p><span>Your mentee</span></p>';
@@ -655,10 +610,10 @@ function displayMentee() {
     
     }
 
-    function suspendMentee(matchingId) {
-        console.log('Suspend mentorship for mentor ID: ' + matchingId);
-    }
+    
 
+
+    
 
 
     function displayPendingMentee() {
@@ -666,6 +621,26 @@ function displayMentee() {
         fetch('../action/display_pending_request.php') 
                 .then(response => response.json())
                 .then(data => {
+
+                
+                
+                    if(data.length === 0){
+
+
+                        var overlay = $('<div class="overlay"></div>');
+                        var overlayContent = $('<div class="overlay-content"></div>');
+                        var message = $('<p> No pending Mentee request found !</p>');
+                        var closeButton = $('<button>Close</button>').click(function() {
+                            
+                            overlay.remove();})
+
+                            overlayContent.append(message, closeButton);
+                            overlay.append(overlayContent);
+                            $('body').append(overlay);
+
+                    }
+
+                    
                     data.forEach(mentor => {
                     var mentorCard = '<div class="mentor">';
                     mentorCard += '<p><span>Pending Request Of Mentorship</span></p>';
@@ -675,17 +650,122 @@ function displayMentee() {
                     mentorCard += '</div>';
                     $('#mentorInfo').append(mentorCard); 
                     });
+
+                    
                 })
                 .catch(error => console.error("Error fetching data:", error));
         
         }
 
-    function AcceptMentorship(matchingId) {
-            console.log('Suspend mentorship for mentor ID: ' + matchingId);
+        function AcceptMentorship(matchingId) {
+           
+            const postData = {
+                matchingId: matchingId
+            };
+        
+            
+            $.ajax({
+                type: "POST",
+                url: "../action/accept_mentee.php",
+                data: postData,
+                dataType: "json",
+                success: function(response) {
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p></p>').text(response.message);
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        overlay.remove();
+                       
+                        
+                    });
+    
+                    overlayContent.append(message, closeButton);
+                    overlay.append(overlayContent);
+                    $('body').append(overlay);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    alert("An error occurred while processing the request.");
+                }
+            });
         }
 
 
 
+        function suspendMentee(matchingId) {
+
+            $('#mentorInfo').innerHTML = ""
+           
+            const postData = {
+                matchingId: matchingId
+            };
+
+
+        
+            
+            $.ajax({
+                type: "POST",
+                url: "../action/revoke_mentee.php",
+                data: postData,
+                dataType: "json",
+                success: function(response) {
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p></p>').text(response.message);
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        overlay.remove();
+                        
+                    });
+    
+                    overlayContent.append(message, closeButton);
+                    overlay.append(overlayContent);
+                    $('body').append(overlay);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    alert("An error occurred while processing the request.");
+                }
+            });
+        }
+
+
+
+        function suspendMentorship(matchingId) {
+
+           
+           
+            const postData = {
+                matchingId: matchingId
+            };
+
+
+        
+            
+            $.ajax({
+                type: "POST",
+                url: "../action/revoke_mentor.php",
+                data: postData,
+                dataType: "json",
+                success: function(response) {
+                    var overlay = $('<div class="overlay"></div>');
+                    var overlayContent = $('<div class="overlay-content"></div>');
+                    var message = $('<p></p>').text(response.message);
+                    var closeButton = $('<button>Close</button>').click(function() {
+                        overlay.remove();
+                        
+                    });
+    
+                    overlayContent.append(message, closeButton);
+                    overlay.append(overlayContent);
+                    $('body').append(overlay);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    alert("An error occurred while processing the request.");
+                }
+            });
+        }
+        
 
 
 

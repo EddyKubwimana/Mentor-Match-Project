@@ -140,13 +140,13 @@ input[type="submit"]:hover {
   </nav>
   
 
-  <div class="untree_co-hero inner-page overlay" style="background-image: url('images/img-school-5-min.jpg');">
+  <div class="untree_co-hero inner-page overlay" style="background-image: url('images/ashesi_admission.jpg');">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Register</h1>
+
 
             </div>
           </div>
@@ -164,7 +164,17 @@ input[type="submit"]:hover {
               <input id = "lastName"  type="text" name="lastname"  pattern="[a-zA-Z]+" title="Your name should not have number "  placeholder="Last Name" required>
               <label  id ="emailnotification"></label>
               <input id = "email" type="text" name="email" placeholder="Email" onchange= "isValidEmail()"  required>
-              <input   type="text" name="major" placeholder="Major" required>
+              <select  name="major" required>
+                  <option  disabled selected>Select your major</option>
+                  <option >Computer Science</option>
+                  <option >Computer Engineering</option>
+                  <option > Management and Information Systems</option>
+                  <option > Mechanical Engineering</option>
+                  <option > Mechanical Engineering</option>
+                  <option > Electriconics and Electric Engineering</option>
+                  <option > Economics</option>
+                  <option > Mechatranics</option>
+              </select>
               <label  id ="dobnotification"> </label>
               <input type="date" id="dob" name="dob" placeholder="Date Of Birth" onchange="validateAge()" required>
       
