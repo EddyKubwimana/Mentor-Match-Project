@@ -83,6 +83,45 @@ button {
   cursor: pointer;
 }
 
+.message-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .message-form label {
+    font-weight: bold;
+  }
+  .message-form textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .message-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  .message-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .message-form button:hover {
+    background-color: #0056b3;
+  }
+
 
     </style>
 </head>
@@ -92,17 +131,18 @@ button {
 
 
 <div class="sidebar">
- <a class = "option"><img src = "../images/option.png"></a>
-    <nav>
-        <ul>
-            <li><a href="../../index.php">Home</a></li>
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="chat.php">Message</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="../action/logout_action.php">Logout</a></li>
+            <a class = "option"><img src = "../images/option.png"></a>
+            <nav>
+                        <ul>
+                            <li><a href="../../index.php"><img src = "../images/home.png">Home</a></li>
+                            <li><a href="dashboard.php"><img src = "../images/dasboard.png">dashboard</a></li>
+                            <li><a href="chat.php"><img src = "../images/inbox.png">Message</a></li>
+                            <li><a href="profile.php"><img src = "../images/account.png">Profile</a></li>
+                            <li><a href="../action/logout_action.php"><img src = "../images/logout.png">Logout</a></li>
 
-        </ul>
-    </nav>
+                        </ul>
+            </nav>
+               
 </div>
 
 <div class="content">
@@ -111,6 +151,15 @@ button {
     </header>
 
     <main> 
+
+  <div class="message-form" id = "message-form">
+  <label for="user-search">Select User to a new user:</label>
+  <select id="user-search">
+  </select>
+  <label for="message">Message:</label>
+  <textarea id="message" placeholder="Type your message here..."></textarea>
+  <button onclick="send()">Send Message</button>
+</div>
 
     <div id="chat-container">
     <div id ="chat">
@@ -178,9 +227,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
                         if (data.length===0){
                             const mentorDiv = document.createElement("div");
-                            mentorDiv.classList.add("me");
+                            mentorDiv.classList.add("mentor");
         
-                            mentorDiv.appendChild(img);
+        
                             mentorDiv.innerHTML ='<h6>No message yet</h6>';
                             
                             searchResults.appendChild(mentorDiv);
@@ -278,6 +327,62 @@ document.addEventListener("DOMContentLoaded", function() {
   
 
     }
+
+
+    function populateUsers() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var users = JSON.parse(xhr.responseText);
+          console.log(users);
+
+          var select = document.getElementById("user-search");
+          users.forEach(function(user) {
+            var option = document.createElement("option");
+            option.value = user.userId;
+            option.textContent = user.firstName + " " + user.lastName;
+            select.appendChild(option);
+          });
+        } else {
+          console.error("Failed to fetch user data");
+        }
+      }
+    };
+    xhr.open("GET", "../action/get_all_user.php", true);
+    xhr.send();
+  }
+
+
+  function send() {
+    var recipient = document.getElementById("user-search").value;
+    var messages = document.getElementById("message").value;
+
+    $.ajax({
+        url: '../action/new_message.php',
+        type: 'POST',
+        data: {friendId: recipient, message : messages},
+        dataType: 'json',
+    
+        success: function(response) {
+       
+                var overlay = $('<div class="overlay"></div>');
+                var overlayContent = $('<div class="overlay-content"></div>');
+                var message = $('<p></p>').text(response.message);
+                var closeButton = $('<button>Close</button>').click(function() {
+                    overlay.remove();
+                   
+                });
+                
+                overlayContent.append(message, closeButton);
+                overlay.append(overlayContent);
+                $('body').append(overlay);
+            },
+        })
+
+  }
+
+  populateUsers()
 
 
 </script>

@@ -25,18 +25,18 @@ isLogin();
 <body>
 
 <div class="sidebar">
-   <a class = "option"><img src = "../images/option.png"></a>
-    <nav>
-    
-        <ul>
-            <li><a href="../../index.php">Home</a></li>
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="chat.php">Message</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="../action/logout_action.php">Logout</a></li>
+            <a class = "option"><img src = "../images/option.png"></a>
+            <nav>
+                        <ul>
+                            <li><a href="../../index.php"><img src = "../images/home.png">Home</a></li>
+                            <li><a href="dashboard.php"><img src = "../images/dasboard.png">dashboard</a></li>
+                            <li><a href="chat.php"><img src = "../images/inbox.png">Message</a></li>
+                            <li><a href="profile.php"><img src = "../images/account.png">Profile</a></li>
+                            <li><a href="../action/logout_action.php"><img src = "../images/logout.png">Logout</a></li>
 
-        </ul>
-    </nav>
+                        </ul>
+            </nav>
+               
 </div>
 
 <div class="content">
